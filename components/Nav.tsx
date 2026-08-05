@@ -26,7 +26,7 @@ export default function Nav() {
             </Link>
           ))}
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/mg-david-doyle/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"

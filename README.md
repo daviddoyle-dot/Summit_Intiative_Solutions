@@ -12,12 +12,13 @@ npm run dev
 ## Before launch — TODO
 
 - [ ] **Logo**: swap the placeholder mark in `components/Logo.tsx` / `public/favicon.svg` for David's real logo files.
-- [ ] **Calendly**: replace the placeholder link in `app/contact/page.tsx` (`https://calendly.com/`) with the real scheduling link.
-- [ ] **Contact email**: update `contact@summitinitiativesolutions.com` in `app/contact/page.tsx` to the real inbox.
-- [ ] **LinkedIn**: replace the placeholder `https://www.linkedin.com/` links in `components/Nav.tsx`, `components/Footer.tsx`, and `app/contact/page.tsx` with David's actual profile URL.
+- [x] **Calendly**: `https://calendly.com/daviddoyle-summitinitiativesolutions`
+- [x] **Contact email**: `daviddoyle@summitinitiativesolutions.com`
+- [x] **LinkedIn**: `https://www.linkedin.com/in/mg-david-doyle/`
 - [ ] **Copy review**: all page copy is drafted from the intake questionnaire — confirm wording with David before launch.
-- [ ] **Domain**: currently registered under Jeremy's Squarespace account on David's behalf — transfer registration (or at minimum hand over DNS control) to David before/at launch.
-- [ ] **Vercel**: deploy under a Vercel account owned by David (not Jeremy's team), so hosting/billing is his from day one.
+- [x] **Domain**: registered in David's own name (Squarespace) — just needs DNS pointed at Vercel at launch.
+- [x] **GitHub**: repo lives under David's own account (`daviddoyle-dot`), Jeremy added as collaborator.
+- [x] **Vercel**: deployed under David's own Vercel account — https://summit-intiative-solutions.vercel.app
 
 ## Deferred to v2 (per budget/timeline)
 

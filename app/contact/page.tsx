@@ -7,7 +7,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const mailtoHref = `mailto:contact@summitinitiativesolutions.com?subject=${encodeURIComponent(
+  const mailtoHref = `mailto:daviddoyle@summitinitiativesolutions.com?subject=${encodeURIComponent(
     `Website inquiry from ${name || "a visitor"}`
   )}&body=${encodeURIComponent(`${message}\n\nFrom: ${name}\nEmail: ${email}`)}`;
 
@@ -23,9 +23,8 @@ export default function Contact() {
           below.
         </p>
 
-        {/* TODO: swap this href for your real Calendly scheduling link */}
         <a
-          href="https://calendly.com/"
+          href="https://calendly.com/daviddoyle-summitinitiativesolutions"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-[#C9713D] text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors mb-14"
@@ -88,7 +87,7 @@ export default function Contact() {
         <p className="text-white/35 text-sm mt-6">
           Or connect on{" "}
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/mg-david-doyle/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/60 hover:text-white transition-colors"

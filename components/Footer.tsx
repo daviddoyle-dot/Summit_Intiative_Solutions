@@ -22,7 +22,7 @@ export default function Footer() {
             Contact
           </Link>
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/mg-david-doyle/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/35 hover:text-white/70 transition-colors"
