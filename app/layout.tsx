@@ -12,20 +12,19 @@ export const metadata: Metadata = {
   title: `${SITE_NAME} | Organizational Optimization Consulting`,
   description: SITE_DESCRIPTION,
   metadataBase: new URL("https://summitinitiativesolutions.com"),
-  icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-  },
   openGraph: {
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
     url: "https://summitinitiativesolutions.com",
     siteName: SITE_NAME,
     type: "website",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: SITE_NAME }],
   },
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
     description: SITE_DESCRIPTION,
+    images: ["/og-image.jpg"],
   },
 };
 

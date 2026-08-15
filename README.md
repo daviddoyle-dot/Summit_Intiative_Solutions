@@ -11,7 +11,7 @@ npm run dev
 
 ## Before launch — TODO
 
-- [ ] **Logo**: swap the placeholder mark in `components/Logo.tsx` / `public/favicon.svg` for David's real logo files.
+- [x] **Logo**: real mark installed (`public/logo-mark.png`, `public/logo-full.png`), background removed for transparency, favicon/apple-touch-icon generated from it.
 - [x] **Calendly**: `https://calendly.com/daviddoyle-summitinitiativesolutions`
 - [x] **Contact email**: `daviddoyle@summitinitiativesolutions.com`
 - [x] **LinkedIn**: `https://www.linkedin.com/in/mg-david-doyle/`

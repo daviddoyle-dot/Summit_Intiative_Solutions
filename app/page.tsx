@@ -19,16 +19,29 @@ export default function Home() {
   return (
     <div className="pt-32">
       {/* HERO */}
-      <section
-        className="pb-28 px-6 flex flex-col items-center text-center relative overflow-hidden"
-        style={{ background: "linear-gradient(180deg, #0a0e17 0%, #0f1524 60%, #0a0e17 100%)" }}
-      >
+      <section className="pb-28 px-6 flex flex-col items-center text-center relative overflow-hidden">
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          src="/mount-princeton.mp4"
+          poster="/mount-princeton-poster.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(10,14,23,0.55) 0%, rgba(10,14,23,0.75) 45%, #0a0e17 100%)",
+          }}
+        />
         <div
           className="absolute top-10 left-1/2 -translate-x-1/2 pointer-events-none"
           style={{
             width: 700,
             height: 700,
-            background: "radial-gradient(ellipse at center, rgba(201,113,61,0.14) 0%, transparent 65%)",
+            background: "radial-gradient(ellipse at center, rgba(201,113,61,0.18) 0%, transparent 65%)",
           }}
         />
 
