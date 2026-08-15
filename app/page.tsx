@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const PILLARS = [
@@ -46,9 +47,14 @@ export default function Home() {
         />
 
         <div className="relative z-10 flex flex-col items-center">
-          <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-5">
-            Summit Initiative Solutions
-          </p>
+          <Image
+            src="/logo-full-solid.png"
+            alt="Summit Initiative Solutions"
+            width={990}
+            height={630}
+            className="w-[240px] md:w-[300px] object-contain mb-8 rounded-xl shadow-[0_0_60px_rgba(0,0,0,0.5)]"
+            priority
+          />
           <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-tight mb-8 max-w-3xl">
             Optimize your people, processes, and systems.
           </h1>
