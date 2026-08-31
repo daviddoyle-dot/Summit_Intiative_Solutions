@@ -120,16 +120,42 @@ export default function Home() {
             A proven track record leading complex organizations.
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-10">
-            Unlike a typical consulting agency, engagements are led directly by someone who has
-            operated inside large, complex organizations &mdash; not just studied them from the
-            outside.
+            Unlike a typical consulting agency, engagements are led directly by Major General
+            (Ret.) David S. Doyle, U.S. Army &mdash; who spent three decades leading organizations
+            of up to 18,000 people, including as Chief of Staff of U.S. Central Command &mdash;
+            not just studying them from the outside.
           </p>
-          <Link
-            href="/contact"
-            className="bg-[#C9713D] text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors inline-block"
-          >
-            Contact Me to Schedule a Call
-          </Link>
+
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-12 max-w-2xl mx-auto">
+            {[
+              { value: "30+", label: "Years of leadership experience" },
+              { value: "18,000", label: "Personnel led at peak" },
+              { value: "3", label: "General officer commands" },
+            ].map((stat) => (
+              <div
+                key={stat.label}
+                className="rounded-xl border border-white/[0.1] bg-[#141b2c] p-5"
+              >
+                <p className="text-2xl md:text-3xl font-black text-white mb-1">{stat.value}</p>
+                <p className="text-white/50 text-xs leading-snug">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/about"
+              className="border border-white/20 text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:border-white/40 transition-colors inline-block"
+            >
+              Meet David
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-[#C9713D] text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors inline-block"
+            >
+              Contact Me to Schedule a Call
+            </Link>
+          </div>
         </div>
       </section>
     </div>
