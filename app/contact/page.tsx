@@ -6,10 +6,18 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [showValidation, setShowValidation] = useState(false);
 
   const mailtoHref = `mailto:daviddoyle@summitinitiativesolutions.com?subject=${encodeURIComponent(
     `Website inquiry from ${name || "a visitor"}`
   )}&body=${encodeURIComponent(`${message}\n\nFrom: ${name}\nEmail: ${email}`)}`;
+
+  const handleSend = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      e.preventDefault();
+      setShowValidation(true);
+    }
+  };
 
   return (
     <div className="pt-40 pb-24 px-6">
@@ -74,6 +82,7 @@ export default function Contact() {
           </div>
           <a
             href={mailtoHref}
+            onClick={handleSend}
             className="inline-block bg-[#C9713D] text-white px-7 py-3 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors"
           >
             Send Message
@@ -93,6 +102,30 @@ export default function Contact() {
           .
         </p>
       </div>
+
+      {showValidation && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-6"
+          onClick={() => setShowValidation(false)}
+        >
+          <div
+            className="max-w-sm w-full rounded-2xl border border-white/[0.1] bg-[#141b2c] p-8 shadow-[0_0_60px_rgba(0,0,0,0.5)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h2 className="text-lg font-bold text-white mb-2">Almost there</h2>
+            <p className="text-white/60 leading-relaxed mb-6">
+              Please fill in your name, email, and message before sending.
+            </p>
+            <button
+              type="button"
+              onClick={() => setShowValidation(false)}
+              className="bg-[#C9713D] text-white px-6 py-2.5 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors"
+            >
+              Got it
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
