@@ -23,12 +23,10 @@ export default function Blog() {
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {FEATURED_POSTS.map((post, i) => (
-            <a
-              key={i}
-              href={post.url}
-              target="_blank"
-              rel="noopener noreferrer"
+          {FEATURED_POSTS.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
               className="group rounded-2xl border border-white/[0.1] bg-[#141b2c] p-8 flex flex-col hover:border-[#C9713D]/50 transition-colors"
             >
               <p className="text-white/35 text-xs font-bold uppercase tracking-[0.2em] mb-4">
@@ -39,18 +37,18 @@ export default function Blog() {
                 {post.excerpt}
               </p>
               <span className="text-[#E0966A] text-sm font-bold inline-flex items-center gap-1.5">
-                Read on LinkedIn
+                Read more
                 <svg
-                  className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                   strokeWidth={2.5}
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M7 7h10v10" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </span>
-            </a>
+            </Link>
           ))}
         </div>
 
