@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Logo from "./Logo";
 
 const LINKS = [
   { href: "/about", label: "About" },
@@ -11,8 +10,7 @@ export default function Nav() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0e17]/90 backdrop-blur-sm border-b border-white/[0.07]">
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3">
-          <Logo />
+        <Link href="/" className="flex items-center">
           <span className="font-bold text-sm tracking-wide">Summit Initiative Solutions</span>
         </Link>
         <div className="flex items-center gap-8">

@@ -18,9 +18,9 @@ const PILLARS = [
 
 export default function Home() {
   return (
-    <div className="pt-32">
+    <div className="pt-20">
       {/* HERO */}
-      <section className="pb-28 px-6 flex flex-col items-center text-center relative overflow-hidden">
+      <section className="pt-8 pb-28 px-6 flex flex-col items-center text-center relative overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           src="/mount-princeton.mp4"
@@ -48,11 +48,11 @@ export default function Home() {
 
         <div className="relative z-10 flex flex-col items-center">
           <Image
-            src="/logo-full-solid.png"
+            src="/logo-full.png"
             alt="Summit Initiative Solutions"
-            width={990}
-            height={630}
-            className="w-[240px] md:w-[300px] object-contain mb-8 rounded-xl shadow-[0_0_60px_rgba(0,0,0,0.5)]"
+            width={884}
+            height={511}
+            className="w-[200px] md:w-[260px] object-contain mb-6 drop-shadow-[0_4px_24px_rgba(0,0,0,0.6)]"
             priority
           />
           <h1 className="text-4xl md:text-6xl font-black leading-tight tracking-tight mb-8 max-w-3xl">
