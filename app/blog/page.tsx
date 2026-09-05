@@ -17,13 +17,9 @@ export default function Blog() {
         <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
           Featured posts from LinkedIn.
         </h1>
-        <p className="text-white/60 text-lg leading-relaxed mb-4 max-w-2xl">
+        <p className="text-white/60 text-lg leading-relaxed mb-14 max-w-2xl">
           A curated selection of David&rsquo;s most-shared thinking on leadership, strategy, and
           organizational effectiveness &mdash; posted first on LinkedIn.
-        </p>
-        <p className="text-white/35 text-sm mb-14 max-w-2xl italic">
-          Preview layout below &mdash; swap in David&rsquo;s actual top posts (see
-          lib/linkedin-posts.ts).
         </p>
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
