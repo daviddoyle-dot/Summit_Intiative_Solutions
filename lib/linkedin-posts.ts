@@ -21,7 +21,7 @@ export const FEATURED_POSTS: LinkedInPost[] = [
     excerpt:
       "A battalion commander never said a word — he just wrote two numbers on a dry-erase board. It taught a young lieutenant that a goal only changes behavior once people believe it's real.",
     url: "https://www.linkedin.com/posts/mg-david-doyle_my-battalion-commander-didnt-say-a-word-activity-7488586966402338816-GzZv",
-    date: "TBD",
+    date: "Aug 2026",
   },
   {
     title: "The Jelly Belly Dispenser",
@@ -35,13 +35,13 @@ export const FEATURED_POSTS: LinkedInPost[] = [
     excerpt:
       "Commanding JRTC meant diagnosing a new unit's friction every month — often faster than the unit itself could, not by being smarter, but by not living inside the problem.",
     url: "https://www.linkedin.com/posts/mg-david-doyle_leadership-teamwork-coaching-activity-7477789601189892097-U7xQ",
-    date: "TBD",
+    date: "Jul 2026",
   },
   {
     title: "Your Calendar Is Your Battle Rhythm",
     excerpt:
       "Leaders often schedule meetings. The best leaders schedule thinking — and a calendar, examined honestly, is a statement of what you actually value.",
     url: "https://www.linkedin.com/posts/mg-david-doyle_leadership-dday-battlerhythm-activity-7469742027950231554-OpYV",
-    date: "TBD",
+    date: "Jul 2026",
   },
 ];
