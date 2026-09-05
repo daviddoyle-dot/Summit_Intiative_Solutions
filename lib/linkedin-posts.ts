@@ -28,7 +28,7 @@ export const FEATURED_POSTS: LinkedInPost[] = [
     excerpt:
       "A $60-a-week candy habit in the Pentagon basement became one of the best sources of informal intelligence about what a team was really thinking — and doing.",
     url: "https://www.linkedin.com/posts/mg-david-doyle_i-spent-60-a-week-on-jelly-bellies-in-activity-7501240100421468160-4RaO",
-    date: "TBD",
+    date: "Sep 3, 2026",
   },
   {
     title: "Not Yet Your Problem",
