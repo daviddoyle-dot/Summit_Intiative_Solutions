@@ -78,76 +78,72 @@ export default function About() {
           </div>
         </div>
 
-        {/* BIO */}
-        <div className="space-y-6 text-white/65 text-lg leading-relaxed max-w-3xl mb-16">
-          <p>
-            David S. Doyle is the Founder and Principal of Summit Initiative Solutions. A retired
-            U.S. Army Major General, he brings more than three decades of experience leading
-            people and organizations through complex change, high-stakes operations, and periods
-            of significant uncertainty.
-          </p>
-          <p>
-            During his Army career, David led organizations ranging from small combat teams to
-            the Army&rsquo;s 18,000-person 4th Infantry Division at Fort Carson, Colorado, and
-            served as Chief of Staff of U.S. Central Command, one of the Department of
-            Defense&rsquo;s most complex strategic headquarters. His experience spans conventional
-            and special operations, multinational and interagency coordination, crisis response,
-            organizational transformation, executive decision-making, and the integration of
-            emerging technology and data into large organizations.
-          </p>
-          <p>
-            David previously served as Commanding General of the Joint Readiness Training Center
-            and Fort Polk, Deputy Commanding General of the 82nd Airborne Division, and Director
-            of Operations for Combined Joint Task Force&ndash;Operation Inherent Resolve. His
-            career included extensive service in Europe, the Middle East, and Central Asia, as
-            well as humanitarian and disaster-response operations, including the 2010 Haiti
-            earthquake response.
-          </p>
-          <p>
-            Across these assignments, David developed a reputation for making sense of complex
-            environments, building strong teams, aligning diverse stakeholders, and translating
-            strategy into disciplined execution. He is particularly effective at bringing people
-            together around a shared purpose and organizing talent, processes, information, and
-            resources to solve difficult problems.
-          </p>
-          <p>
-            David is a graduate of the United States Military Academy and holds master&rsquo;s
-            degrees from the School of Advanced Military Studies and the National War College,
-            where he was a Distinguished Graduate.
-          </p>
-          <p>
-            Through Summit Initiative Solutions, David advises senior leaders and organizations on
-            strategy, organizational effectiveness, executive leadership, decision-making,
-            transformation, and leader development.
-          </p>
-        </div>
+        {/* BIO + LEADERSHIP PHILOSOPHY, divided */}
+        <div className="grid md:grid-cols-2 gap-12 md:gap-0 relative mb-16">
+          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-white/10" />
 
-        {/* LEADERSHIP PHILOSOPHY */}
-        <div className="mb-16">
-          <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-3">
-            Leadership Philosophy
-          </p>
-          <h3 className="text-2xl md:text-3xl font-black mb-8 max-w-2xl">
-            Four principles that anchor every engagement.
-          </h3>
-          <div className="grid sm:grid-cols-2 gap-6">
-            {PILLARS.map((pillar) => (
-              <div
-                key={pillar.title}
-                className="rounded-2xl border border-white/[0.1] bg-[#141b2c] p-8 hover:border-[#C9713D]/50 transition-colors"
-              >
-                <h4 className="text-lg font-bold text-[#E0966A] mb-2">{pillar.title}</h4>
-                <p className="text-white/60 leading-relaxed">{pillar.body}</p>
-              </div>
-            ))}
+          {/* BIO */}
+          <div className="space-y-6 text-white/65 text-lg leading-relaxed md:pr-12">
+            <p>
+              David S. Doyle is the Founder and Principal of Summit Initiative Solutions. A
+              retired U.S. Army Major General, he brings more than three decades of experience
+              leading people and organizations through complex change, high-stakes operations,
+              and periods of significant uncertainty.
+            </p>
+            <p>
+              During his Army career, David led organizations ranging from small combat teams to
+              the Army&rsquo;s 18,000-person 4th Infantry Division at Fort Carson, Colorado, and
+              served as Chief of Staff of U.S. Central Command, one of the Department of
+              Defense&rsquo;s most complex strategic headquarters. His experience spans
+              conventional and special operations, multinational and interagency coordination,
+              crisis response, organizational transformation, executive decision-making, and the
+              integration of emerging technology and data into large organizations.
+            </p>
+            <p>
+              David previously served as Commanding General of the Joint Readiness Training
+              Center and Fort Polk, Deputy Commanding General of the 82nd Airborne Division, and
+              Director of Operations for Combined Joint Task Force&ndash;Operation Inherent
+              Resolve. His career included extensive service in Europe, the Middle East, and
+              Central Asia, as well as humanitarian and disaster-response operations, including
+              the 2010 Haiti earthquake response.
+            </p>
+            <p>
+              Across these assignments, David developed a reputation for making sense of complex
+              environments, building strong teams, aligning diverse stakeholders, and translating
+              strategy into disciplined execution. He is particularly effective at bringing
+              people together around a shared purpose and organizing talent, processes,
+              information, and resources to solve difficult problems.
+            </p>
+            <p>
+              David is a graduate of the United States Military Academy and holds master&rsquo;s
+              degrees from the School of Advanced Military Studies and the National War College,
+              where he was a Distinguished Graduate.
+            </p>
+            <p>
+              Through Summit Initiative Solutions, David advises senior leaders and organizations
+              on strategy, organizational effectiveness, executive leadership, decision-making,
+              transformation, and leader development.
+            </p>
+          </div>
+
+          {/* LEADERSHIP PHILOSOPHY */}
+          <div className="md:pl-12">
+            <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-3">
+              Leadership Philosophy
+            </p>
+            <h3 className="text-2xl md:text-3xl font-black mb-8">
+              Four principles that anchor every engagement.
+            </h3>
+            <div className="space-y-6">
+              {PILLARS.map((pillar) => (
+                <div key={pillar.title} className="border-l-2 border-[#C9713D]/50 pl-5 py-1">
+                  <h4 className="text-base font-bold text-white mb-1.5">{pillar.title}</h4>
+                  <p className="text-white/55 leading-relaxed text-[15px]">{pillar.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* PERSONAL NOTE */}
-        <p className="text-white/50 text-base leading-relaxed max-w-2xl mb-14 italic">
-          Outside of his professional work, David is an avid road cyclist, swimmer, and lifelong
-          student of leadership, strategy, theology, and decision-making.
-        </p>
 
         <Link
           href="/contact"
