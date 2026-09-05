@@ -84,23 +84,6 @@ export default function About() {
           </div>
         </div>
 
-        {/* SELECTED CLIENTS */}
-        <div className="mb-16">
-          <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-5">
-            Selected Clients
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {CLIENTS.map((client) => (
-              <span
-                key={client}
-                className="rounded-xl border border-white/[0.1] bg-[#141b2c] px-5 py-3 text-white/70 font-bold text-sm"
-              >
-                {client}
-              </span>
-            ))}
-          </div>
-        </div>
-
         {/* BIO + LEADERSHIP PHILOSOPHY, divided */}
         <div className="grid md:grid-cols-2 gap-12 md:gap-0 relative mb-16">
           <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-white/10" />
@@ -157,13 +140,30 @@ export default function About() {
             <h3 className="text-2xl md:text-3xl font-black mb-8">
               Four principles that anchor every engagement.
             </h3>
-            <div className="space-y-6">
+            <div className="space-y-6 mb-12">
               {PILLARS.map((pillar) => (
                 <div key={pillar.title} className="border-l-2 border-[#C9713D]/50 pl-5 py-1">
                   <h4 className="text-base font-bold text-white mb-1.5">{pillar.title}</h4>
                   <p className="text-white/55 leading-relaxed text-[15px]">{pillar.body}</p>
                 </div>
               ))}
+            </div>
+
+            {/* SELECTED CLIENTS */}
+            <div>
+              <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">
+                Selected Clients
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {CLIENTS.map((client) => (
+                  <span
+                    key={client}
+                    className="rounded-xl border border-white/[0.1] bg-[#141b2c] px-4 py-2.5 text-white/70 font-bold text-sm"
+                  >
+                    {client}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
