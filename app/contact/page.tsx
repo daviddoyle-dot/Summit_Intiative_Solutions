@@ -32,11 +32,7 @@ export default function Contact() {
           Schedule a Call
         </a>
 
-        <form
-          action={mailtoHref}
-          method="get"
-          className="space-y-5 bg-[#141b2c] border border-white/[0.1] rounded-2xl p-8"
-        >
+        <div className="space-y-5 bg-[#141b2c] border border-white/[0.1] rounded-2xl p-8">
           <div>
             <label htmlFor="name" className="block text-sm text-white/60 mb-2">
               Name
@@ -76,13 +72,13 @@ export default function Contact() {
               placeholder="Tell us a bit about your organization."
             />
           </div>
-          <button
-            type="submit"
-            className="bg-[#C9713D] text-white px-7 py-3 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors"
+          <a
+            href={mailtoHref}
+            className="inline-block bg-[#C9713D] text-white px-7 py-3 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors"
           >
             Send Message
-          </button>
-        </form>
+          </a>
+        </div>
 
         <p className="text-white/35 text-sm mt-6">
           Or connect on{" "}

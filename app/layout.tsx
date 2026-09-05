@@ -28,6 +28,20 @@ export const metadata: Metadata = {
   },
 };
 
+const ORGANIZATION_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE_NAME,
+  url: "https://summitinitiativesolutions.com",
+  logo: "https://summitinitiativesolutions.com/logo-mark.png",
+  description: SITE_DESCRIPTION,
+  sameAs: ["https://www.linkedin.com/company/summit-initiative-solutions/"],
+  founder: {
+    "@type": "Person",
+    name: "David S. Doyle",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,6 +50,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-[#0a0e17] text-white">
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
+        />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />

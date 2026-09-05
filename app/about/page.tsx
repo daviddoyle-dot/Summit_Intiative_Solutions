@@ -33,9 +33,35 @@ const PILLARS = [
   },
 ];
 
+const PERSON_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "David S. Doyle",
+  honorificPrefix: "Major General (Ret.)",
+  jobTitle: "Founder & Principal",
+  worksFor: {
+    "@type": "Organization",
+    name: "Summit Initiative Solutions",
+    url: "https://summitinitiativesolutions.com",
+  },
+  url: "https://summitinitiativesolutions.com/about",
+  image: "https://summitinitiativesolutions.com/david-doyle.jpg",
+  sameAs: ["https://www.linkedin.com/in/mg-david-doyle/"],
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "United States Military Academy" },
+    { "@type": "CollegeOrUniversity", name: "School of Advanced Military Studies" },
+    { "@type": "CollegeOrUniversity", name: "National War College" },
+  ],
+};
+
 export default function About() {
   return (
     <div className="pt-40 pb-24 px-6">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_JSON_LD) }}
+      />
       <div className="max-w-5xl mx-auto">
         <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">About</p>
         <h1 className="text-4xl md:text-5xl font-black mb-14 leading-tight max-w-3xl">
