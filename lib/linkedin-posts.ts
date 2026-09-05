@@ -13,35 +13,35 @@ export type LinkedInPost = {
 //   2. Write a short title and one-line excerpt summarizing it.
 //   3. Add (or replace) an entry below with { title, excerpt, url, date }.
 //
-// TODO: the two entries below use David's personal profile URL as a
-// placeholder — swap in the direct post URL and posted date once available.
+// TODO: dates below are still "TBD" — fill in the actual posted date for
+// each entry once available.
 export const FEATURED_POSTS: LinkedInPost[] = [
   {
     title: "Two Numbers on a Dry-Erase Board",
     excerpt:
       "A battalion commander never said a word — he just wrote two numbers on a dry-erase board. It taught a young lieutenant that a goal only changes behavior once people believe it's real.",
-    url: "https://www.linkedin.com/in/mg-david-doyle/",
+    url: "https://www.linkedin.com/posts/mg-david-doyle_my-battalion-commander-didnt-say-a-word-activity-7488586966402338816-GzZv",
     date: "TBD",
   },
   {
     title: "The Jelly Belly Dispenser",
     excerpt:
       "A $60-a-week candy habit in the Pentagon basement became one of the best sources of informal intelligence about what a team was really thinking — and doing.",
-    url: "https://www.linkedin.com/in/mg-david-doyle/",
+    url: "https://www.linkedin.com/posts/mg-david-doyle_i-spent-60-a-week-on-jelly-bellies-in-activity-7501240100421468160-4RaO",
     date: "TBD",
   },
   {
     title: "Not Yet Your Problem",
     excerpt:
       "Commanding JRTC meant diagnosing a new unit's friction every month — often faster than the unit itself could, not by being smarter, but by not living inside the problem.",
-    url: "https://www.linkedin.com/in/mg-david-doyle/",
+    url: "https://www.linkedin.com/posts/mg-david-doyle_leadership-teamwork-coaching-activity-7477789601189892097-U7xQ",
     date: "TBD",
   },
   {
     title: "Your Calendar Is Your Battle Rhythm",
     excerpt:
       "Leaders often schedule meetings. The best leaders schedule thinking — and a calendar, examined honestly, is a statement of what you actually value.",
-    url: "https://www.linkedin.com/in/mg-david-doyle/",
+    url: "https://www.linkedin.com/posts/mg-david-doyle_leadership-dday-battlerhythm-activity-7469742027950231554-OpYV",
     date: "TBD",
   },
 ];
