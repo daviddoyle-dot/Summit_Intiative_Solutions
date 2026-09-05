@@ -87,7 +87,7 @@ export default function Contact() {
         <p className="text-white/35 text-sm mt-6">
           Or connect on{" "}
           <a
-            href="https://www.linkedin.com/in/mg-david-doyle/"
+            href="https://www.linkedin.com/company/summit-initiative-solutions/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/60 hover:text-white transition-colors"
