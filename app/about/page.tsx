@@ -14,6 +14,12 @@ const STATS = [
   { value: "3", label: "General officer commands held" },
 ];
 
+// Permission to name a client publicly must be confirmed before this list
+// goes live. Do not merge/deploy to production until every entry below is
+// cleared — as of this writing, "The Brooks Group" and "Leidos" are still
+// pending permission.
+const CLIENTS = ["Flowserve", "Veriten", "The Brooks Group", "Helix Earth", "Leidos"];
+
 const PILLARS = [
   {
     title: "Invest in People",
@@ -75,6 +81,23 @@ export default function About() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* SELECTED CLIENTS */}
+        <div className="mb-16">
+          <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-5">
+            Selected Clients
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {CLIENTS.map((client) => (
+              <span
+                key={client}
+                className="rounded-xl border border-white/[0.1] bg-[#141b2c] px-5 py-3 text-white/70 font-bold text-sm"
+              >
+                {client}
+              </span>
+            ))}
           </div>
         </div>
 
