@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { TESTIMONIALS } from "@/lib/testimonials";
 
 export const metadata: Metadata = {
   title: "About | Summit Initiative Solutions",
@@ -192,6 +193,34 @@ export default function About() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* WHAT CLIENTS ARE SAYING */}
+        <div className="mb-16">
+          <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-3">
+            Client Feedback
+          </p>
+          <h3 className="text-2xl md:text-3xl font-black mb-8 max-w-2xl">
+            What clients are saying.
+          </h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {TESTIMONIALS.map((testimonial, i) => (
+              <div
+                key={i}
+                className="rounded-2xl border border-white/[0.1] bg-[#141b2c] p-8 flex flex-col"
+              >
+                <p className="text-white/70 leading-relaxed italic mb-6 flex-1">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                <div>
+                  <p className="text-white font-bold text-sm">{testimonial.author}</p>
+                  <p className="text-white/50 text-xs">
+                    {testimonial.title}, {testimonial.company}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
