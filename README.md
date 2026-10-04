@@ -19,8 +19,8 @@ npm run dev
 - [x] **Domain**: `summitinitiativesolutions.com` is registered in David's name on Squarespace and now serves this site from Vercel. DNS stays at Squarespace: `www` CNAME -> Vercel, apex A record -> `76.76.21.21`. MX and TXT records are Google Workspace email — do not remove them.
 - [x] **GitHub**: repo lives under David's own account (`daviddoyle-dot`), Jeremy added as collaborator.
 - [x] **Vercel**: deployed under David's own Vercel account — https://summit-intiative-solutions.vercel.app
-- [ ] **Make the bare domain primary in Vercel**: it currently 308-redirects to `www`, but the sitemap, Open Graph tags, robots, and JSON-LD all use `https://summitinitiativesolutions.com`. In Vercel -> Domains, set the bare domain to Production and have `www` redirect to it.
-- [ ] **Test the contact form** end to end (confirm the message reaches daviddoyle@summitinitiativesolutions.com).
+- [x] **Bare domain is primary in Vercel**: `https://summitinitiativesolutions.com` serves the site and `www` 308-redirects to it, matching the sitemap, Open Graph tags, robots, and JSON-LD.
+- [x] **Contact form**: sends through Resend (domain verified, `RESEND_API_KEY` set in Vercel). Test message confirmed delivered to daviddoyle@summitinitiativesolutions.com.
 - [ ] **Search Console**: submit `https://summitinitiativesolutions.com/sitemap.xml` once the bare domain is primary.
 - [ ] **LinkedIn company page**: add the site URL.
 - [ ] **Optional**: Vercel suggests newer DNS values (www CNAME already updated; apex A record still shows a cosmetic "DNS Change Recommended" warning — the current record works).
