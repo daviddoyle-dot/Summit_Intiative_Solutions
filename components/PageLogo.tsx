@@ -4,7 +4,7 @@ import Image from "next/image";
 // the fixed nav and the page heading. The parent page wrapper must be `relative`.
 export default function PageLogo() {
   return (
-    <div className="hidden sm:block absolute top-[82px] inset-x-0 pointer-events-none" aria-hidden="true">
+    <div className="absolute top-[82px] inset-x-0 pointer-events-none" aria-hidden="true">
       <div className="max-w-6xl mx-auto px-6 flex justify-end">
         <Image
           src="/logo-mark-tight.png"
