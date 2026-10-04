@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PageLogo from "@/components/PageLogo";
 import { FEATURED_POSTS } from "@/lib/linkedin-posts";
 
 export const metadata: Metadata = {
@@ -11,7 +12,8 @@ const PERSONAL_LINKEDIN = "https://www.linkedin.com/in/mg-david-doyle/";
 
 export default function Blog() {
   return (
-    <div className="pt-40 pb-24 px-6">
+    <div className="relative pt-40 pb-24 px-6">
+      <PageLogo />
       <div className="max-w-5xl mx-auto">
         <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">Blog</p>
         <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">

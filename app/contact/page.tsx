@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PageLogo from "@/components/PageLogo";
 
 const CONTACT_EMAIL = "daviddoyle@summitinitiativesolutions.com";
 
@@ -52,7 +53,8 @@ export default function Contact() {
     "w-full bg-[#0a0e17] border border-white/[0.12] rounded-lg px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-[#C9713D]/60";
 
   return (
-    <div className="pt-40 pb-24 px-6">
+    <div className="relative pt-40 pb-24 px-6">
+      <PageLogo />
       <div className="max-w-3xl mx-auto">
         <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">Contact</p>
         <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
