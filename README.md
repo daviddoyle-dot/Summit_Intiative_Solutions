@@ -25,6 +25,13 @@ npm run dev
 - [ ] **LinkedIn company page**: add the site URL.
 - [ ] **Optional**: Vercel suggests newer DNS values (www CNAME already updated; apex A record still shows a cosmetic "DNS Change Recommended" warning — the current record works).
 
+## Contact form
+
+The contact page posts to `app/api/contact/route.ts`, which emails David through
+[Resend](https://resend.com). It needs `RESEND_API_KEY` set in Vercel (see `.env.example`)
+and `summitinitiativesolutions.com` verified in Resend. Without the key the form shows an
+error and points visitors to David's email address.
+
 ## Analytics
 
 Vercel Web Analytics is already wired in (`@vercel/analytics` in `app/layout.tsx`) and has
