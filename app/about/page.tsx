@@ -59,7 +59,6 @@ export default function About() {
     <div className="pt-40 pb-24 px-6">
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_JSON_LD) }}
       />
       <div className="max-w-5xl mx-auto">

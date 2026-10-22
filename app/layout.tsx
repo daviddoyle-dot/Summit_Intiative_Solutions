@@ -52,7 +52,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#0a0e17] text-white">
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
         />
         <Nav />

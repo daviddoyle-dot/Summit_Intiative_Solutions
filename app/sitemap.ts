@@ -1,17 +1,17 @@
 import type { MetadataRoute } from "next";
-import { FEATURED_POSTS } from "@/lib/linkedin-posts";
+import { getFullPosts } from "@/lib/posts";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://summitinitiativesolutions.com";
   return [
-    { url: `${base}/`, lastModified: new Date() },
-    { url: `${base}/about`, lastModified: new Date() },
-    { url: `${base}/services`, lastModified: new Date() },
-    { url: `${base}/blog`, lastModified: new Date() },
-    ...FEATURED_POSTS.map((post) => ({
-      url: `${base}/blog/${post.slug}`,
-      lastModified: new Date(),
+    { url: `${SITE_URL}/`, lastModified: new Date() },
+    { url: `${SITE_URL}/about`, lastModified: new Date() },
+    { url: `${SITE_URL}/services`, lastModified: new Date() },
+    { url: `${SITE_URL}/blog`, lastModified: new Date() },
+    ...getFullPosts().map((post) => ({
+      url: `${SITE_URL}/blog/${post.slug}`,
+      lastModified: new Date(post.date),
     })),
-    { url: `${base}/contact`, lastModified: new Date() },
+    { url: `${SITE_URL}/contact`, lastModified: new Date() },
   ];
 }
