@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PageLogo from "@/components/PageLogo";
 
 export const metadata: Metadata = {
   title: "About | Summit Initiative Solutions",
@@ -56,7 +57,8 @@ const PERSON_JSON_LD = {
 
 export default function About() {
   return (
-    <div className="pt-40 pb-24 px-6">
+    <div className="relative pt-40 pb-24 px-6">
+      <PageLogo />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_JSON_LD) }}
