@@ -6,7 +6,8 @@ import { formatPostDate } from "@/lib/post-format";
 
 export const metadata: Metadata = {
   title: "Blog | Summit Initiative Solutions",
-  description: "Featured LinkedIn posts and insights from David Doyle.",
+  description:
+    "Writing on leadership, strategy, and organizational effectiveness from Major General (Ret.) David S. Doyle.",
   alternates: { canonical: "/blog" },
 };
 
@@ -24,11 +25,12 @@ export default function Blog() {
       <div className="max-w-5xl mx-auto">
         <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">Blog</p>
         <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-          Featured posts from LinkedIn.
+          Perspectives on leadership.
         </h1>
         <p className="text-white/60 text-lg leading-relaxed mb-14 max-w-2xl">
-          A curated selection of David&rsquo;s most-shared thinking on leadership, strategy, and
-          organizational effectiveness &mdash; posted first on LinkedIn.
+          David&rsquo;s writing on leadership, strategy, and organizational effectiveness, drawn
+          from three decades of leading large, complex organizations. Shorter versions are shared
+          on LinkedIn.
         </p>
 
         {posts.length === 0 ? (
