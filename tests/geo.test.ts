@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { isCountryAllowed } from "../lib/geo";
 
 test("allows the US, Canada, Australia and Europe", () => {
-  for (const code of ["US", "us", "PR", "GU", "CA", "AU", "GB", "DE", "FR", "IE", "CH", "NO"]) assert.equal(isCountryAllowed(code), true);
+  for (const code of ["US", "us", "PR", "GU", "CA", "AU", "NZ", "GB", "DE", "FR", "IE", "CH", "NO"]) assert.equal(isCountryAllowed(code), true);
 });
 
 test("blocks other countries", () => {

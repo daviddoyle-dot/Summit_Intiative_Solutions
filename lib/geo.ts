@@ -1,6 +1,6 @@
-// The site is open to visitors in the United States, Canada, Australia and Europe. Vercel adds the
+// The site is open to visitors in the United States, Canada, Australia, New Zealand and Europe. Vercel adds the
 // visitor's country to every request as `x-vercel-ip-country`; anything else gets turned away.
-const NORTH_AMERICA_AND_AUSTRALIA = ["US", "PR", "GU", "VI", "AS", "MP", "CA", "AU"];
+const NORTH_AMERICA_AND_AUSTRALIA = ["US", "PR", "GU", "VI", "AS", "MP", "CA", "AU", "NZ"];
 
 // Europe, leaving out Russia and Belarus.
 const EUROPE = [
