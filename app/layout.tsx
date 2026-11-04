@@ -35,6 +35,7 @@ const ORGANIZATION_JSON_LD = {
   url: "https://summitinitiativesolutions.com",
   logo: "https://summitinitiativesolutions.com/logo-mark.png",
   description: SITE_DESCRIPTION,
+  telephone: "+1-910-315-0879",
   sameAs: ["https://www.linkedin.com/company/summit-initiative-solutions/"],
   founder: {
     "@type": "Person",

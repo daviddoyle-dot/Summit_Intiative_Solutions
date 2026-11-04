@@ -4,6 +4,8 @@ import { useState } from "react";
 import PageLogo from "@/components/PageLogo";
 
 const CONTACT_EMAIL = "daviddoyle@summitinitiativesolutions.com";
+const CONTACT_PHONE = "(910) 315-0879";
+const CONTACT_PHONE_HREF = "tel:+19103150879";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -170,7 +172,11 @@ export default function Contact() {
         )}
 
         <p className="text-white/35 text-sm mt-6">
-          Or connect on{" "}
+          Prefer to call? Reach David at{" "}
+          <a href={CONTACT_PHONE_HREF} className="text-white/60 hover:text-white transition-colors">
+            {CONTACT_PHONE}
+          </a>
+          . Or connect on{" "}
           <a
             href="https://www.linkedin.com/company/summit-initiative-solutions/"
             target="_blank"
