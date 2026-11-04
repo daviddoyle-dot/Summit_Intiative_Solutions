@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import PageLogo from "@/components/PageLogo";
 import { TESTIMONIALS } from "@/lib/testimonials";
 
 export const metadata: Metadata = {
@@ -17,9 +18,18 @@ const STATS = [
 
 // Permission to name a client publicly must be confirmed before this list
 // goes live. Do not merge/deploy to production until every entry below is
-// cleared — as of this writing, "The Brooks Group" and "Leidos" are still
-// pending permission.
-const CLIENTS = ["Flowserve", "Veriten", "The Brooks Group", "Helix Earth", "Leidos"];
+// cleared. David's 2026-10-28 email listed these six as businesses he has worked
+// with, but that is not the same as permission to name them: "The Brooks Group"
+// is still unconfirmed, and "The Brief Lab" and "The Fivecoat Consulting Group"
+// are new and unconfirmed. Leidos was dropped from David's latest list.
+const CLIENTS = [
+  "Flowserve",
+  "Veriten",
+  "The Brooks Group",
+  "The Brief Lab",
+  "Helix Earth",
+  "The Fivecoat Consulting Group",
+];
 
 const PILLARS = [
   {
@@ -63,10 +73,10 @@ const PERSON_JSON_LD = {
 
 export default function About() {
   return (
-    <div className="pt-40 pb-24 px-6">
+    <div className="relative pt-40 pb-24 px-6">
+      <PageLogo />
       <script
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_JSON_LD) }}
       />
       <div className="max-w-5xl mx-auto">

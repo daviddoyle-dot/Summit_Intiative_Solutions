@@ -35,6 +35,7 @@ const ORGANIZATION_JSON_LD = {
   url: "https://summitinitiativesolutions.com",
   logo: "https://summitinitiativesolutions.com/logo-mark.png",
   description: SITE_DESCRIPTION,
+  telephone: "+1-910-315-0879",
   sameAs: ["https://www.linkedin.com/company/summit-initiative-solutions/"],
   founder: {
     "@type": "Person",
@@ -52,7 +53,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#0a0e17] text-white">
         <script
           type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
         />
         <Nav />
