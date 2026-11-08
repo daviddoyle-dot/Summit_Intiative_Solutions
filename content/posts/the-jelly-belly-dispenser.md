@@ -8,6 +8,8 @@ I spent $60 a week on Jelly Bellies in the basement of the Pentagon.
 
 They gave people a reason to stop by my desk.
 
+![The Jelly Belly dispenser on David's desk](/uploads/blog/2026/jelly-belly-dispenser-1172x1600.jpg)
+
 Yes, the Pentagon basement is real, and calling it the “bowels of the building” is not too far from the truth. Special badges get you down there, which is warning enough. Once there, you enter a windowless, soul-sucking place with the air-conditioned scent of hard work.
 
 Our joint team communicated and refined strategy and policy options for senior national leaders. Occasionally we'd get a kitchen pass and go “upstairs” to see the reflected daylight of the E Ring or cut through the courtyard to check the weather.

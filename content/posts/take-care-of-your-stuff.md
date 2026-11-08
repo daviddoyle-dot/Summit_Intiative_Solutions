@@ -23,6 +23,8 @@ Would our vehicles be ready for the next decade of operations?
 Would our budgets reflect the discipline required to support future missions?
 Had we developed a leader training plan that prepared this generation’s junior leaders to become the next generation’s senior leaders?
 
+![Tanks in a maintenance bay](/uploads/blog/2026/tank-maintenance-bay-1600x1200.jpg)
+
 Stewardship matters. It is a sign of a mature, thriving organization.
 
 What are you leaving for those who will follow in your footsteps?

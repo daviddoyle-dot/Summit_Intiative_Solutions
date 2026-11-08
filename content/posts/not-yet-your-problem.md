@@ -43,6 +43,8 @@ If we failed to communicate our observations with credibility and evidence, we h
 
 The photo below was taken during one of those exchanges with senior leaders from the Colombian Army. Although the uniforms were different, the leadership challenge was remarkably familiar: before you can help another organization improve, you have to understand how it sees the world.
 
+![Meeting with senior leaders from the Colombian Army at the Joint Readiness Training Center](/uploads/blog/2026/colombian-army-exchange-1600x1010.jpg)
+
 JRTC was an unusual organization because helping other organizations improve was our mission.
 
 But the lesson applies everywhere.

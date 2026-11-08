@@ -6,6 +6,8 @@ linkedinUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7516507270780
 ---
 Chief of Staff or Chief of the People? Are they the same? Should they be?
 
+![David speaking at a ceremony](/uploads/blog/2026/chief-of-the-people-1600x1396.jpg)
+
 I’ve served as a Chief of Staff twice—first for a 15,000-Soldier division with a 350-person staff, and later at a combatant command with roughly 4,500 staff members, including 12 flag officers. I also supervised and developed five Chiefs of Staff.
 
 Army doctrine calls the Chief of Staff the commander’s principal assistant and key staff integrator: directing the staff, integrating its work, managing battle rhythm, and freeing the commander from routine management. I’ve seen that role performed exceptionally in very different ways.

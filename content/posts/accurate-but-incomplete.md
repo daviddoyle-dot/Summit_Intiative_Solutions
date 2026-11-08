@@ -18,6 +18,8 @@ But every one of those data tools is also a filter.
 
 While commanding the 4th Infantry Division, we planned and executed several long-distance aviation operations. Our Forward Arming and Refueling Points (FARPs) were meeting training requirements on paper, yet timelines during execution continued to slip.
 
+![Soldiers refueling an AH-64 Apache helicopter](/uploads/blog/2026/apache-refuel-1600x900.jpg)
+
 The dashboard told me something was wrong.
 
 It couldn't tell me why.

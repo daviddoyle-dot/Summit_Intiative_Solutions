@@ -62,7 +62,7 @@ const components: Components = {
         loading="lazy"
         // Width and height let the browser hold the space before the picture arrives.
         {...(size ? { width: Number(size[1]), height: Number(size[2]) } : {})}
-        className="rounded-xl border border-white/[0.08] max-w-full h-auto my-2"
+        className="block mx-auto rounded-xl border border-white/[0.08] max-w-full max-h-[70vh] w-auto h-auto my-2"
       />
     );
   },

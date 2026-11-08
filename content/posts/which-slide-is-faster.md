@@ -36,6 +36,8 @@ Then residents showed us something different.
 
 One young girl told me she preferred playing at a friend's neighborhood playground because their slide was smoother and faster. What began as a child's observation led us to discover that aging playground equipment across multiple neighborhoods needed upgrades, prompting us to use existing repair inventories to improve playgrounds throughout the installation. This small comment gave us a new way of looking at the “problem” of building confidence with our residents.
 
+![Talking with a young resident during a walking town hall](/uploads/blog/2026/walking-town-hall-1600x1066.jpg)
+
 Sometimes the person closest to a problem is a child who simply knows which slide is faster.
 
 There were certainly maintenance issues.

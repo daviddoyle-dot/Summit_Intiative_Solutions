@@ -36,6 +36,8 @@ Trust reveals itself through organizational behavior. People in high-trust organ
 
 I learned this clearly in Army Aviation.
 
+![Flying a UH-60M Black Hawk](/uploads/blog/2026/uh60m-cockpit-1200x1600.jpg)
+
 Flying under the supervision of highly experienced instructor pilots and crew chiefs reinforced how operational trust is built and sustained.
 
 A helicopter crew includes a pilot in command, a pilot, and crew chiefs—all with different responsibilities but all essential to mission success.

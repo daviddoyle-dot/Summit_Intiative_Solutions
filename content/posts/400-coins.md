@@ -10,6 +10,8 @@ I do not remember every training event, deployment, or operation from those year
 
 But I remember almost every person who handed me one of those coins.
 
+![Shelves of challenge coins](/uploads/blog/2026/coin-tray-1596x1600.jpg)
+
 That is because recognition is rarely about the object itself. It is about observation gained through leader presence. And the memory of leaders who took the time to recognize performance face-to-face.
 
 Strong organizations understand that cohesive teams do not form accidentally.
@@ -23,7 +25,9 @@ In the military, we built team cohesion through:
 
 Challenge coins became one small but meaningful symbol of those experiences.
 
-Many of my coins came from leaders I served with during combat operations, disaster relief missions, difficult training events, and organizational crises where teams had to trust one another completely to succeed.
+Many of the coins in these photos came from leaders I served with during combat operations, disaster relief missions, difficult training events, and organizational crises where teams had to trust one another completely to succeed.
+
+![A display case full of challenge coins](/uploads/blog/2026/coin-table-1600x486.jpg)
 
 There was a very real incentive to perform well because failure carried real consequences.
 
