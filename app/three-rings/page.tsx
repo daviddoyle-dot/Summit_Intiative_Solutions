@@ -19,8 +19,8 @@ const RINGS = [
     primary: true,
   },
   {
-    name: "Strategy deployment",
-    tag: "the forge",
+    name: "Strategy Deployment",
+    tag: "the Forge",
     body: "A few breakthrough objectives, cascaded so every team sees its part.",
   },
   {
