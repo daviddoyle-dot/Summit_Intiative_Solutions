@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import PageLogo from "@/components/PageLogo";
+import CalendlyButton from "@/components/CalendlyButton";
 
 const CONTACT_EMAIL = "daviddoyle@summitinitiativesolutions.com";
 const CONTACT_PHONE = "(910) 315-0879";
@@ -60,21 +61,14 @@ export default function Contact() {
       <div className="max-w-3xl mx-auto">
         <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">Contact</p>
         <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-          Let&apos;s talk about your organization.
+          Pull up a chair.
         </h1>
         <p className="text-white/60 text-lg leading-relaxed mb-12 max-w-xl">
-          The fastest way to get started is to schedule a call. Prefer email? Send a message
-          below.
+          Tell me about your practice and the client you&rsquo;re thinking about. The fastest way
+          is a call; prefer email, write below.
         </p>
 
-        <a
-          href="https://calendly.com/daviddoyle-summitinitiativesolutions"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-[#C9713D] text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors mb-14"
-        >
-          Schedule a Call
-        </a>
+        <CalendlyButton className="mb-14" />
 
         {status === "sent" ? (
           <div

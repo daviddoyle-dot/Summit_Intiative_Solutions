@@ -2,13 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-const LINKS = [
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
-];
+import { CALENDLY_URL, NAV_LINKS as LINKS, SITE_NAME } from "@/lib/site";
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/summit-initiative-solutions/";
 
@@ -43,12 +37,12 @@ export default function Nav() {
       <div className="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
         <Link href="/" onClick={close} className="flex items-center">
           <span className="font-bold text-sm tracking-wide whitespace-nowrap">
-            Summit Initiative Solutions
+            {SITE_NAME}
           </span>
         </Link>
 
         {/* Desktop / tablet */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-7">
           {LINKS.map((link) => (
             <Link
               key={link.href}
@@ -67,16 +61,24 @@ export default function Nav() {
           >
             <LinkedInIcon />
           </a>
+          <a
+            href={CALENDLY_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#C9713D] text-white px-5 py-2.5 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors whitespace-nowrap"
+          >
+            Pull up a chair
+          </a>
         </div>
 
-        {/* Phone */}
+        {/* Phone and tablet */}
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-menu"
-          className="md:hidden -mr-2 -my-2 p-2 text-white/70 hover:text-white transition-colors"
+          className="lg:hidden -mr-2 -my-2 p-2 text-white/70 hover:text-white transition-colors"
         >
           <svg
             viewBox="0 0 24 24"
@@ -97,7 +99,7 @@ export default function Nav() {
       </div>
 
       {open && (
-        <div id="mobile-menu" className="md:hidden border-t border-white/[0.07]">
+        <div id="mobile-menu" className="lg:hidden border-t border-white/[0.07]">
           <div className="max-w-6xl mx-auto px-6 py-2 flex flex-col">
             {LINKS.map((link) => (
               <Link
@@ -118,6 +120,15 @@ export default function Nav() {
             >
               <LinkedInIcon />
               LinkedIn
+            </a>
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={close}
+              className="my-4 bg-[#C9713D] text-white px-6 py-3.5 rounded-xl font-bold text-base text-center hover:bg-[#b8632f] transition-colors"
+            >
+              Pull up a chair
             </a>
           </div>
         </div>

@@ -1,37 +1,21 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
+import Beliefs from "@/components/Beliefs";
+import CalendlyButton from "@/components/CalendlyButton";
 import PageLogo from "@/components/PageLogo";
+import { WRITING } from "@/lib/brand";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About | Summit Initiative Solutions",
+  title: `About | ${SITE_NAME}`,
   description:
-    "Major General (Ret.) David S. Doyle, U.S. Army — Founder & Principal of Summit Initiative Solutions, bringing three decades of experience leading large, complex organizations.",
+    "Major General (Ret.) David S. Doyle: 33 years of leading people through hard problems, from Ranger units to an 18,000-person division. Founder of The Summit Initiative.",
 };
 
 const STATS = [
-  { value: "30+", label: "Years leading mission-critical organizations" },
-  { value: "18,000", label: "Personnel led, 4th Infantry Division" },
-  { value: "3", label: "General officer commands held" },
-];
-
-const PILLARS = [
-  {
-    title: "Invest in People",
-    body: "Build deep talent benches and performance cultures that advance leaders into greater responsibility.",
-  },
-  {
-    title: "Accomplish the Mission",
-    body: "Translate strategy into disciplined execution, aligning diverse stakeholders around a shared purpose.",
-  },
-  {
-    title: "Responsible Stewardship",
-    body: "Treat the people, resources, and trust entrusted to an organization as things to be strengthened, not spent.",
-  },
-  {
-    title: "Learning & Innovation",
-    body: "Create organizations where initiative, creativity, and continuous learning are allowed to flourish.",
-  },
+  { value: "33", label: "Years of service" },
+  { value: "88", label: "Months in combat" },
+  { value: "18,000", label: "People led" },
 ];
 
 const PERSON_JSON_LD = {
@@ -39,14 +23,14 @@ const PERSON_JSON_LD = {
   "@type": "Person",
   name: "David S. Doyle",
   honorificPrefix: "Major General (Ret.)",
-  jobTitle: "Founder & Principal",
+  jobTitle: "Founder",
   worksFor: {
     "@type": "Organization",
-    name: "Summit Initiative Solutions",
-    url: "https://summitinitiativesolutions.com",
+    name: SITE_NAME,
+    url: SITE_URL,
   },
-  url: "https://summitinitiativesolutions.com/about",
-  image: "https://summitinitiativesolutions.com/david-doyle.jpg",
+  url: `${SITE_URL}/about`,
+  image: `${SITE_URL}/david-doyle.jpg`,
   sameAs: ["https://www.linkedin.com/in/mg-david-doyle/"],
   alumniOf: [
     { "@type": "CollegeOrUniversity", name: "United States Military Academy" },
@@ -66,7 +50,7 @@ export default function About() {
       <div className="max-w-5xl mx-auto">
         <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">About</p>
         <h1 className="text-4xl md:text-5xl font-black mb-14 leading-tight max-w-3xl">
-          Optimization backed by three decades of leading complex organizations.
+          Thirty-three years of walking into hard problems.
         </h1>
 
         {/* PROFILE HEADER */}
@@ -88,9 +72,7 @@ export default function About() {
             <h2 className="text-2xl md:text-3xl font-black mb-1">
               Major General (Ret.) David S. Doyle
             </h2>
-            <p className="text-[#E0966A] font-bold mb-6">
-              Founder &amp; Principal, Summit Initiative Solutions
-            </p>
+            <p className="text-[#E0966A] font-bold mb-6">Founder, {SITE_NAME}</p>
             <div className="grid grid-cols-3 gap-4 mb-2">
               {STATS.map((stat) => (
                 <div
@@ -105,79 +87,82 @@ export default function About() {
           </div>
         </div>
 
-        {/* BIO + LEADERSHIP PHILOSOPHY, divided */}
+        {/* BIO + WHAT I BELIEVE, divided */}
         <div className="grid md:grid-cols-2 gap-12 md:gap-0 relative mb-16">
           <div className="hidden md:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-px bg-white/10" />
 
-          {/* BIO */}
           <div className="space-y-6 text-white/65 text-lg leading-relaxed md:pr-12">
             <p>
-              David S. Doyle is the Founder and Principal of Summit Initiative Solutions. A
-              retired U.S. Army Major General, he brings more than three decades of experience
-              leading people and organizations through complex change, high-stakes operations,
-              and periods of significant uncertainty.
+              I spent 33 years as an Army officer. I led Rangers in Afghanistan and Iraq. I took a
+              paratrooper battalion into Haiti days after the 2010 earthquake. I coached a new
+              organization every month at the Joint Readiness Training Center, served as Chief of
+              Staff of U.S. Central Command, and commanded the 18,000 soldiers of the 4th Infantry
+              Division, including U.S. and NATO forces across six countries.
             </p>
             <p>
-              During his Army career, David led organizations ranging from small combat teams to
-              the Army&rsquo;s 18,000-person 4th Infantry Division at Fort Carson, Colorado, and
-              served as Chief of Staff of U.S. Central Command, one of the Department of
-              Defense&rsquo;s most complex strategic headquarters. His experience spans
-              conventional and special operations, multinational and interagency coordination,
-              crisis response, organizational transformation, executive decision-making, and the
-              integration of emerging technology and data into large organizations.
+              Along the way I learned that most organizations don&rsquo;t fail for lack of talent
+              or strategy. They fail because the leader can&rsquo;t see what&rsquo;s really
+              happening, and the goal never becomes real to the people who have to hit it.
             </p>
             <p>
-              David previously served as Commanding General of the Joint Readiness Training
-              Center and Fort Polk, Deputy Commanding General of the 82nd Airborne Division, and
-              Director of Operations for Combined Joint Task Force&ndash;Operation Inherent
-              Resolve. His career included extensive service in Europe, the Middle East, and
-              Central Asia, as well as humanitarian and disaster-response operations, including
-              the 2010 Haiti earthquake response.
+              I also got things wrong. The worst one involved a barbecue. Every mistake taught me
+              the same thing: go see for yourself, and build more than one path to the truth.
             </p>
             <p>
-              Across these assignments, David developed a reputation for making sense of complex
-              environments, building strong teams, aligning diverse stakeholders, and translating
-              strategy into disciplined execution. He is particularly effective at bringing
-              people together around a shared purpose and organizing talent, processes,
-              information, and resources to solve difficult problems.
+              When I retired, a sitting company CEO mentored me through the move into business.
+              Today, through {SITE_NAME}, I work with the coaches who help entrepreneurs get
+              traction. I coach the leaders they coach, join their sessions, and bring what I
+              learned into rooms that need it.
             </p>
             <p>
-              David is a graduate of the United States Military Academy and holds master&rsquo;s
+              I&rsquo;m a graduate of West Point (B.S., Military History) and hold master&rsquo;s
               degrees from the School of Advanced Military Studies and the National War College,
-              where he was a Distinguished Graduate.
-            </p>
-            <p>
-              Through Summit Initiative Solutions, David advises senior leaders and organizations
-              on strategy, organizational effectiveness, executive leadership, decision-making,
-              transformation, and leader development.
+              where I was a Distinguished Graduate.
             </p>
           </div>
 
-          {/* LEADERSHIP PHILOSOPHY */}
           <div className="md:pl-12">
-            <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-3">
-              Leadership Philosophy
-            </p>
-            <h3 className="text-2xl md:text-3xl font-black mb-8">
-              Four principles that anchor every engagement.
-            </h3>
-            <div className="space-y-6">
-              {PILLARS.map((pillar) => (
-                <div key={pillar.title} className="border-l-2 border-[#C9713D]/50 pl-5 py-1">
-                  <h4 className="text-base font-bold text-white mb-1.5">{pillar.title}</h4>
-                  <p className="text-white/55 leading-relaxed text-[15px]">{pillar.body}</p>
-                </div>
-              ))}
-            </div>
+            <Beliefs />
           </div>
         </div>
 
-        <Link
-          href="/contact"
-          className="inline-block bg-[#C9713D] text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors"
-        >
-          Schedule a Call
-        </Link>
+        {/* WRITING */}
+        <div className="mb-16">
+          <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-6">Writing</p>
+          <ul className="divide-y divide-white/10 border-y border-white/10">
+            {WRITING.map((piece) => (
+              <li key={piece.url} className="py-5 flex flex-col sm:flex-row gap-1 sm:gap-6">
+                <span className="text-white/40 font-bold shrink-0 w-14">{piece.year}</span>
+                <span className="text-white/75 leading-relaxed">
+                  <a
+                    href={piece.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white font-bold hover:text-[#E0966A] transition-colors"
+                  >
+                    &ldquo;{piece.title}&rdquo;
+                  </a>
+                  , <em>Military Review</em>
+                  {piece.note && ` (${piece.note})`}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/*
+          TESTIMONIAL (waiting on Joe McCormack's quote). Uncomment and fill in once it arrives;
+          never use placeholder words here.
+
+        <figure className="mb-16 rounded-2xl border border-white/[0.1] bg-[#141b2c] p-8 md:p-10">
+          <blockquote className="text-xl md:text-2xl text-white leading-relaxed">
+            &ldquo;QUOTE&rdquo;
+          </blockquote>
+          <figcaption className="mt-5 text-white/50">Joe McCormack, author</figcaption>
+        </figure>
+        */}
+
+        <CalendlyButton />
       </div>
     </div>
   );

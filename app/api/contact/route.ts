@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const DEFAULT_TO = "daviddoyle@summitinitiativesolutions.com";
-const DEFAULT_FROM = "Summit Initiative Solutions <contact@summitinitiativesolutions.com>";
+const DEFAULT_FROM = "The Summit Initiative <contact@summitinitiativesolutions.com>";
 
 const MAX_NAME = 120;
 const MAX_EMAIL = 200;
@@ -64,7 +64,7 @@ export async function POST(request: Request) {
       to: [process.env.CONTACT_TO_EMAIL || DEFAULT_TO],
       reply_to: email,
       subject: `Website inquiry from ${name}`,
-      text: `${message}\n\n---\nFrom: ${name}\nEmail: ${email}\nSent from the Summit Initiative Solutions website contact form.`,
+      text: `${message}\n\n---\nFrom: ${name}\nEmail: ${email}\nSent from The Summit Initiative website contact form.`,
     }),
   });
 

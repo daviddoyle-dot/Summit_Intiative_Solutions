@@ -3,12 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageLogo from "@/components/PageLogo";
 import PostBody from "@/components/PostBody";
+import CalendlyButton from "@/components/CalendlyButton";
 import { getFullPosts, getPostBySlug } from "@/lib/posts";
 import { formatPostDate } from "@/lib/post-format";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
-// Only posts that exist at build time have a page; anything else is a 404.
-export const dynamicParams = false;
+// Pages are built ahead of time and refreshed hourly, so a scheduled post goes live on its
+// date without a redeploy. Unknown or not-yet-published slugs are a 404.
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return getFullPosts().map((post) => ({ slug: post.slug }));
@@ -80,7 +82,7 @@ export default async function BlogPost({
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
-          Back to Blog
+          Back to Stories
         </Link>
 
         <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">
@@ -94,8 +96,7 @@ export default async function BlogPost({
 
         <div className="border-t border-white/10 pt-8 mb-10">
           <p className="text-white/50 text-sm mb-4">
-            Written by Major General (Ret.) David S. Doyle, Founder &amp; Principal of{" "}
-            {SITE_NAME}.
+            Written by Major General (Ret.) David S. Doyle, Founder of {SITE_NAME}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             {post.linkedinUrl && (
@@ -119,12 +120,7 @@ export default async function BlogPost({
             >
               Share on LinkedIn
             </a>
-            <Link
-              href="/contact"
-              className="inline-block text-center bg-[#C9713D] text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors"
-            >
-              Schedule a Call
-            </Link>
+            <CalendlyButton className="px-6 py-3" />
           </div>
         </div>
       </div>

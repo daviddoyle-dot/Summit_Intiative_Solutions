@@ -2,11 +2,14 @@ import type { MetadataRoute } from "next";
 import { getFullPosts } from "@/lib/posts";
 import { SITE_URL } from "@/lib/site";
 
+export const revalidate = 3600;
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${SITE_URL}/`, lastModified: new Date() },
     { url: `${SITE_URL}/about`, lastModified: new Date() },
     { url: `${SITE_URL}/services`, lastModified: new Date() },
+    { url: `${SITE_URL}/three-rings`, lastModified: new Date() },
     { url: `${SITE_URL}/blog`, lastModified: new Date() },
     ...getFullPosts().map((post) => ({
       url: `${SITE_URL}/blog/${post.slug}`,

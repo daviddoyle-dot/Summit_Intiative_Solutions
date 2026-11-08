@@ -58,7 +58,24 @@ function byNewest(a: Post, b: Post): number {
   return b.date.localeCompare(a.date) || a.title.localeCompare(b.title);
 }
 
-export function getAllPosts(): Post[] {
+/** Today's date in US Eastern time, as YYYY-MM-DD. */
+export function todayIso(now = new Date()): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(now);
+}
+
+/** A post dated in the future is scheduled: hidden until its date arrives. */
+export function isPublished(post: Pick<Post, "date">, today = todayIso()): boolean {
+  return post.date <= today;
+}
+
+/** Preview deployments and local development show scheduled posts too, so they can be
+ *  reviewed before they go out. */
+export function showScheduledPosts(): boolean {
+  return process.env.VERCEL_ENV === "preview" || process.env.NODE_ENV === "development";
+}
+
+/** Every post file, including scheduled ones. */
+function readAllPosts(): Post[] {
   if (!fs.existsSync(POSTS_DIR)) return [];
   return fs
     .readdirSync(POSTS_DIR)
@@ -69,6 +86,12 @@ export function getAllPosts(): Post[] {
     })
     .filter((post): post is Post => post !== null)
     .sort(byNewest);
+}
+
+/** The posts readers can see right now. */
+export function getAllPosts(): Post[] {
+  const posts = readAllPosts();
+  return showScheduledPosts() ? posts : posts.filter((post) => isPublished(post));
 }
 
 export function getPostBySlug(slug: string): Post | undefined {

@@ -3,11 +3,17 @@ import Link from "next/link";
 import PageLogo from "@/components/PageLogo";
 import { getAllPosts } from "@/lib/posts";
 import { formatPostDate } from "@/lib/post-format";
+import CalendlyButton from "@/components/CalendlyButton";
+import { SITE_NAME } from "@/lib/site";
+import { isPublished } from "@/lib/posts";
+
+// Refresh hourly so scheduled posts appear on their date.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Blog | Summit Initiative Solutions",
+  title: `Stories | ${SITE_NAME}`,
   description:
-    "Writing on leadership, strategy, and organizational effectiveness from Major General (Ret.) David S. Doyle.",
+    "Stories from 33 years of leading, from Major General (Ret.) David S. Doyle: what he learned the hard way, one story at a time.",
   alternates: { canonical: "/blog" },
 };
 
@@ -23,14 +29,12 @@ export default function Blog() {
     <div className="relative pt-40 pb-24 px-6">
       <PageLogo />
       <div className="max-w-5xl mx-auto">
-        <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">Blog</p>
+        <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">Stories</p>
         <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
-          Perspectives on leadership.
+          Stories from 33 years of leading.
         </h1>
         <p className="text-white/60 text-lg leading-relaxed mb-14 max-w-2xl">
-          David&rsquo;s writing on leadership, strategy, and organizational effectiveness, drawn
-          from three decades of leading large, complex organizations. Shorter versions are shared
-          on LinkedIn.
+          What I learned the hard way, one story at a time. Shorter versions run on LinkedIn.
         </p>
 
         {posts.length === 0 ? (
@@ -40,6 +44,7 @@ export default function Blog() {
             {posts.map((post) => {
               const meta = (
                 <p className="text-white/35 text-xs font-bold uppercase tracking-[0.2em] mb-4">
+                  {!isPublished(post) && <span className="text-[#E0966A]">Scheduled &middot; </span>}
                   {formatPostDate(post.date)}
                   {!post.linkedinOnly && ` · ${post.readingMinutes} min read`}
                 </p>
@@ -107,7 +112,7 @@ export default function Blog() {
           <div>
             <h2 className="text-lg font-bold text-white mb-1">Follow along on LinkedIn</h2>
             <p className="text-white/55 text-sm">
-              New posts on leadership and organizational strategy, as they happen.
+              A new story most weeks.
             </p>
           </div>
           <a
@@ -120,12 +125,7 @@ export default function Blog() {
           </a>
         </div>
 
-        <Link
-          href="/contact"
-          className="mt-14 inline-block bg-[#C9713D] text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors"
-        >
-          Schedule a Call
-        </Link>
+        <CalendlyButton className="mt-14" />
       </div>
     </div>
   );

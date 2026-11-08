@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { LEGAL_NAME, SITE_NAME } from "@/lib/site";
 import "./globals.css";
 
-const SITE_NAME = "Summit Initiative Solutions";
 const SITE_DESCRIPTION =
-  "Summit Initiative Solutions helps leaders optimize their people, processes, and systems to increase returns on investment.";
+  "Retired Army Major General David Doyle helps the coaches who help entrepreneurs get traction: coaching their clients' leaders, joining their sessions, and bringing 33 years of hard-won leadership into the room.";
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} | Organizational Optimization Consulting`,
+  title: `${SITE_NAME} | Leadership from MG (Ret.) David Doyle`,
   description: SITE_DESCRIPTION,
   metadataBase: new URL("https://summitinitiativesolutions.com"),
   openGraph: {
@@ -32,6 +32,7 @@ const ORGANIZATION_JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: SITE_NAME,
+  legalName: LEGAL_NAME,
   url: "https://summitinitiativesolutions.com",
   logo: "https://summitinitiativesolutions.com/logo-mark.png",
   description: SITE_DESCRIPTION,

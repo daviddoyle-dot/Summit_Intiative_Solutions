@@ -52,3 +52,12 @@ test("the real posts in the repository all parse", async () => {
   assert.ok(posts.length >= 4);
   for (const post of posts) assert.ok(post.body.length > 100, post.slug);
 });
+
+test("posts dated in the future are scheduled, not published", async () => {
+  const { isPublished, todayIso } = await import("../lib/posts");
+  assert.equal(isPublished({ date: "2026-11-10" }, "2026-11-09"), false);
+  assert.equal(isPublished({ date: "2026-11-10" }, "2026-11-10"), true);
+  assert.equal(isPublished({ date: "2026-11-01" }, "2026-11-10"), true);
+  // Late evening in New York is still the same day there, even after midnight UTC.
+  assert.equal(todayIso(new Date("2026-11-10T03:30:00Z")), "2026-11-09");
+});

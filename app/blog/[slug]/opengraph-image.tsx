@@ -6,7 +6,8 @@ import { formatPostDate } from "@/lib/post-format";
 import { SITE_NAME } from "@/lib/site";
 
 // The preview card LinkedIn (and other sites) show when a post link is shared.
-export const alt = "Blog post from Summit Initiative Solutions";
+export const alt = "Story from The Summit Initiative";
+export const revalidate = 3600;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

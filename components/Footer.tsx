@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
+import { LEGAL_NAME, NAV_LINKS } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -8,22 +9,19 @@ export default function Footer() {
         <div className="flex items-center gap-3">
           <Logo className="w-5 h-5" />
           <span className="text-white/35 text-sm">
-            &copy; {new Date().getFullYear()} Summit Initiative Solutions
+            &copy; {new Date().getFullYear()} {LEGAL_NAME}
           </span>
         </div>
-        <div className="flex items-center gap-8 text-sm">
-          <Link href="/about" className="text-white/35 hover:text-white/70 transition-colors">
-            About
-          </Link>
-          <Link href="/services" className="text-white/35 hover:text-white/70 transition-colors">
-            Services
-          </Link>
-          <Link href="/blog" className="text-white/35 hover:text-white/70 transition-colors">
-            Blog
-          </Link>
-          <Link href="/contact" className="text-white/35 hover:text-white/70 transition-colors">
-            Contact
-          </Link>
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-white/35 hover:text-white/70 transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
           <a
             href="https://www.linkedin.com/company/summit-initiative-solutions/"
             target="_blank"
