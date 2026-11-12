@@ -2,65 +2,49 @@ import type { Metadata } from "next";
 import CalendlyButton from "@/components/CalendlyButton";
 import PageLogo from "@/components/PageLogo";
 import PaperDownload from "@/components/PaperDownload";
+import { WRITING } from "@/lib/brand";
 import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `The Three Rings | ${SITE_NAME}`,
   description:
-    "Purpose, strategy, process, cadence and governance: the framework David Doyle used to connect purpose to daily work in organizations of up to 18,000 people.",
+    "The Three Rings of Organizational Effectiveness: a practical way to connect an organization's purpose to its processes, meetings, and decisions.",
   alternates: { canonical: "/three-rings" },
 };
 
+const ARTICLE_URL = WRITING[0].url;
+
 const RINGS = [
   {
-    name: "Purpose",
-    tag: "the One Ring",
-    body: "Why the organization exists. Everything is measured against it.",
-    primary: true,
-  },
-  {
-    name: "Strategy Deployment",
-    tag: "the Forge",
-    body: "A few breakthrough objectives, cascaded so every team sees its part.",
-  },
-  {
+    label: "Ring One",
     name: "Process Map",
-    tag: "the Ring of Knowledge",
-    body: "How work actually flows. An X-ray of the organization.",
+    tagline: "Understand how the work actually gets done.",
+    paragraphs: [
+      "Before improving an organization, leaders need to understand its real processes: what work is being performed, how it moves between teams, and whether it contributes to the organization’s purpose.",
+      "The first question is not whether the organization is efficient. It’s whether the organization is effective.",
+    ],
   },
   {
+    label: "Ring Two",
     name: "Operating Cadence",
-    tag: "the Ring of Synchronization",
-    body: "When leaders review, decide, and align.",
+    tagline: "Make meetings and information serve decisions.",
+    paragraphs: [
+      "Once leaders understand the work, they can organize the meetings, reviews, and decision points necessary to keep it moving.",
+      "The right operating cadence ensures information reaches the right people, decisions are made at the right time, and teams remain aligned.",
+    ],
   },
   {
+    label: "Ring Three",
     name: "Terms of Reference",
-    tag: "the Ring of Governance",
-    body: "Who decides, who’s consulted, who executes, who’s accountable.",
+    tagline: "Make responsibilities and authorities clear.",
+    paragraphs: [
+      "Who makes the decision? Who needs to participate? Who executes it? Who is accountable for the result?",
+      "Clear terms of reference allow organizations to coordinate effectively without requiring every decision to move to the top.",
+    ],
   },
 ];
 
-const CALLOUTS = [
-  {
-    line: "The product is excellent. The purpose is absent.",
-    note: "On meetings that produce polished work nobody uses.",
-  },
-  {
-    line: "Check who attends the meeting.",
-    note: "The roster tells you whether it matters.",
-  },
-  {
-    line: "Effectiveness before efficiency.",
-    note: "Get the right work flowing before you make it faster.",
-  },
-];
-
-const CONTROL = [
-  { name: "Micromanage", note: "Too much control. Stifles initiative." },
-  { name: "Closely supervise", note: "While trust is still developing." },
-  { name: "Trust to operate", note: "Proven teams, still checked." },
-  { name: "Neglect", note: "Not enough guidance. Risk climbs." },
-];
+const eyebrow = "text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-3";
 
 export default function ThreeRings() {
   return (
@@ -71,31 +55,52 @@ export default function ThreeRings() {
           The Three Rings
         </p>
         <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight max-w-4xl">
-          Purpose is the One Ring. Here&rsquo;s how to forge the other three.
+          Connecting purpose to the work of an organization.
         </h1>
-        <p className="text-white/60 text-lg leading-relaxed mb-14 max-w-2xl">
-          Most companies have a purpose on the wall and a calendar full of meetings that have
-          nothing to do with it. The Three Rings is how I connected the two, running
-          organizations of up to 18,000 people. It works alongside whatever system your client
-          already runs.
-        </p>
+        <div className="text-white/60 text-lg leading-relaxed mb-16 max-w-2xl space-y-4">
+          <p>
+            Most organizations can explain what they&rsquo;re trying to accomplish. The greater
+            challenge is ensuring that their people, decisions, meetings, and daily activities
+            actually support that purpose.
+          </p>
+          <p>
+            I encountered this challenge repeatedly during my Army career. Talented people were
+            working hard, often producing excellent results, but not always on the things that
+            mattered most.
+          </p>
+          <p>The Three Rings of Organizational Effectiveness grew out of that experience.</p>
+        </div>
 
-        {/* DIAGRAM */}
-        <ol className="max-w-2xl mb-20" aria-label="The Three Rings, from purpose down">
+        {/* PURPOSE + THE THREE RINGS */}
+        <ol className="max-w-3xl mb-20" aria-label="Purpose and the Three Rings">
+          <li className="flex flex-col items-center">
+            <div className="w-full rounded-2xl border border-[#C9713D] bg-[#C9713D]/15 p-7 md:p-8">
+              <p className={eyebrow}>Start with purpose</p>
+              <div className="space-y-3 text-white/70 leading-relaxed">
+                <p>
+                  An organization&rsquo;s purpose should provide direction for its strategy,
+                  priorities, and allocation of resources.
+                </p>
+                <p>
+                  But purpose alone is not enough. Leaders need a practical way to connect their
+                  intentions with what the organization does every day.
+                </p>
+                <p className="text-white font-bold">That&rsquo;s where the Three Rings come in.</p>
+              </div>
+            </div>
+            <div className="h-8 w-px bg-[#C9713D]/50" aria-hidden="true" />
+          </li>
           {RINGS.map((ring, index) => (
             <li key={ring.name} className="flex flex-col items-center">
-              <div
-                className={`w-full rounded-2xl border p-6 md:p-7 text-center ${
-                  ring.primary
-                    ? "border-[#C9713D] bg-[#C9713D]/15"
-                    : "border-white/[0.12] bg-[#141b2c]"
-                }`}
-              >
-                <p className="text-xl md:text-2xl font-black text-white">
-                  {ring.name}
-                  <span className="text-[#E0966A] font-bold">: {ring.tag}</span>
-                </p>
-                <p className="text-white/60 leading-relaxed mt-2">{ring.body}</p>
+              <div className="w-full rounded-2xl border border-white/[0.12] bg-[#141b2c] p-7 md:p-8">
+                <p className={eyebrow}>{ring.label}</p>
+                <h2 className="text-2xl font-black text-white mb-1">{ring.name}</h2>
+                <p className="text-[#E0966A] font-bold mb-4">{ring.tagline}</p>
+                <div className="space-y-3 text-white/60 leading-relaxed">
+                  {ring.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
               </div>
               {index < RINGS.length - 1 && (
                 <div className="h-8 w-px bg-[#C9713D]/50" aria-hidden="true" />
@@ -104,68 +109,42 @@ export default function ThreeRings() {
           ))}
         </ol>
 
-        {/* PULL QUOTE */}
-        <blockquote className="mb-20 border-l-4 border-[#C9713D] pl-6 md:pl-8 py-2 max-w-3xl">
-          <p className="text-xl md:text-2xl font-bold text-white leading-relaxed">
-            A process map without cadence is inert. A cadence without governance is motion without
-            direction. Governance without purpose is control without meaning.
-          </p>
-        </blockquote>
-
-        {/* CALLOUTS */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
-          {CALLOUTS.map((callout) => (
-            <div key={callout.line} className="rounded-2xl border border-white/[0.1] bg-[#141b2c] p-7">
-              <p className="text-lg font-black text-[#E0966A] mb-2 leading-snug">{callout.line}</p>
-              <p className="text-white/55 leading-relaxed text-[15px]">{callout.note}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* RIGHT LEVEL OF CONTROL */}
-        <div className="mb-20">
-          <h2 className="text-2xl md:text-3xl font-black mb-8">The right level of control</h2>
-          <div className="relative">
-            <div
-              className="hidden md:block absolute left-0 right-0 top-[11px] h-0.5 bg-gradient-to-r from-[#E0966A] via-white/30 to-[#E0966A]"
-              aria-hidden="true"
-            />
-            <ol className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 relative">
-              {CONTROL.map((point) => (
-                <li key={point.name} className="flex md:flex-col items-start md:items-center gap-4 md:gap-3 md:text-center">
-                  <span className="shrink-0 w-6 h-6 rounded-full border-2 border-[#C9713D] bg-[#0a0e17]" aria-hidden="true" />
-                  <span>
-                    <span className="block font-bold text-white">{point.name}</span>
-                    <span className="block text-white/55 text-sm leading-snug mt-1">{point.note}</span>
-                  </span>
-                </li>
-              ))}
-            </ol>
+        {/* PUTTING THE RINGS TOGETHER */}
+        <div className="mb-16 max-w-3xl">
+          <h2 className="text-2xl md:text-3xl font-black mb-6">Putting the rings together</h2>
+          <blockquote className="border-l-4 border-[#C9713D] pl-6 md:pl-8 py-1 mb-8">
+            <p className="text-xl md:text-2xl font-bold text-white leading-relaxed">
+              The process map shows how work gets done. The operating cadence establishes how
+              leaders coordinate and make decisions. The terms of reference clarify who is
+              responsible and what authority they have.
+            </p>
+          </blockquote>
+          <div className="space-y-4 text-white/60 text-lg leading-relaxed">
+            <p>Together, they connect an organization&rsquo;s daily activities to its enduring purpose.</p>
+            <p>
+              The framework is not intended to replace an existing management system. It helps
+              leaders understand whether their current processes, meetings, and decision
+              structures support what they are trying to achieve.
+            </p>
           </div>
-          <p className="text-white/60 leading-relaxed mt-8 max-w-2xl">
-            The job is choosing the right level of control for the moment, and moving it as
-            trust grows.
+          <p className="text-white/45 text-sm mt-8">
+            Developed with MAJ Lam Nguyen and published in <em>Military Review</em>, April 2026.
           </p>
         </div>
 
-        <p className="text-white/45 text-sm mb-10">
-          Published in{" "}
+        <div className="flex flex-col sm:flex-row gap-4 mb-16">
           <a
-            href="https://www.armyupress.army.mil/Journals/Military-Review/Online-Exclusive/2026-OLE/Three-Rings/"
+            href={ARTICLE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:text-white transition-colors"
+            className="inline-block text-center border border-white/20 text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:border-white/40 transition-colors"
           >
-            <em>Military Review</em> (2026)
-          </a>{" "}
-          with Maj. Lam Nguyen.
-        </p>
-
-        <div className="mb-10">
-          <PaperDownload />
+            Read the published article
+          </a>
+          <CalendlyButton label="Discuss a Three Rings workshop" />
         </div>
 
-        <CalendlyButton />
+        <PaperDownload />
       </div>
     </div>
   );

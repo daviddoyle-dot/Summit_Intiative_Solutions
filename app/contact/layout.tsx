@@ -3,7 +3,7 @@ import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: `Contact | ${SITE_NAME}`,
-  description: "Pull up a chair: book a conversation with Major General (Ret.) David S. Doyle.",
+  description: "Pull up a chair: book a conversation with David S. Doyle.",
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {

@@ -9,7 +9,7 @@ import { SITE_NAME, SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: `About | ${SITE_NAME}`,
   description:
-    "Major General (Ret.) David S. Doyle: 33 years of leading people through hard problems, from Ranger units to an 18,000-person division. Founder of The Summit Initiative.",
+    "David S. Doyle: 33 years of leading people through hard problems, from small teams to an 18,000-person division. Founder of The Summit Initiative.",
 };
 
 const STATS = [
@@ -110,9 +110,9 @@ export default function About() {
             </p>
             <p>
               When I retired, a sitting company CEO mentored me through the move into business.
-              Today, through {SITE_NAME}, I work with the coaches who help entrepreneurs get
-              traction. I coach the leaders they coach, join their sessions, and bring what I
-              learned into rooms that need it.
+              Today, through {SITE_NAME}, I work with business owners, executives, and leadership
+              teams who want to strengthen their organizations, and I speak to teams at training
+              events, leader development sessions, and board meetings.
             </p>
             <p>
               I&rsquo;m a graduate of West Point (B.S., Military History) and hold master&rsquo;s

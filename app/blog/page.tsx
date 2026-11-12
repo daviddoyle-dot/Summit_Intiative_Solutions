@@ -29,18 +29,50 @@ export default function Blog() {
     <div className="relative pt-40 pb-24 px-6">
       <PageLogo />
       <div className="max-w-5xl mx-auto">
-        <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">Stories</p>
+        <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">Leadership lessons</p>
         <h1 className="text-4xl md:text-5xl font-black mb-6 leading-tight">
           Stories from 33 years of leading.
         </h1>
-        <p className="text-white/60 text-lg leading-relaxed mb-14 max-w-2xl">
-          What I learned the hard way, one story at a time. Shorter versions run on LinkedIn.
-        </p>
+        <div className="text-white/60 text-lg leading-relaxed mb-10 max-w-2xl space-y-4">
+          <p>
+            Over the years, I&rsquo;ve learned that some of the most important leadership lessons
+            come from unexpected experiences.
+          </p>
+          <p>
+            A conversation with a Soldier. A decision that didn&rsquo;t turn out as expected. A team
+            that accomplished something extraordinary. Or the realization that I hadn&rsquo;t
+            understood a problem nearly as well as I thought.
+          </p>
+          <p>
+            These are some of those stories and what they taught me about people, leadership, and
+            making organizations better.
+          </p>
+          <p>
+            Many began as LinkedIn posts. I&rsquo;ve brought them together here in the hope that
+            another leader might find something useful.
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4 mb-16">
+          <a
+            href="#stories"
+            className="inline-block text-center bg-[#C9713D] text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:bg-[#b8632f] transition-colors"
+          >
+            Read the stories
+          </a>
+          <a
+            href={PERSONAL_LINKEDIN}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-center border border-white/20 text-white px-8 py-3.5 rounded-xl font-bold text-sm hover:border-white/40 transition-colors"
+          >
+            Follow on LinkedIn
+          </a>
+        </div>
 
         {posts.length === 0 ? (
           <p className="text-white/50 mb-16">New posts are on the way.</p>
         ) : (
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div id="stories" className="grid md:grid-cols-3 gap-6 mb-16 scroll-mt-28">
             {posts.map((post) => {
               const meta = (
                 <p className="text-white/35 text-xs font-bold uppercase tracking-[0.2em] mb-4">

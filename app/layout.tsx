@@ -6,10 +6,10 @@ import { LEGAL_NAME, SITE_NAME } from "@/lib/site";
 import "./globals.css";
 
 const SITE_DESCRIPTION =
-  "Retired Army Major General David Doyle helps the coaches who help entrepreneurs get traction: coaching their clients' leaders, joining their sessions, and bringing 33 years of hard-won leadership into the room.";
+  "David Doyle helps business owners, executives, and leadership teams build strong teams and make complex organizations work, drawing on 33 years of leading organizations of up to 18,000 people.";
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} | Leadership from MG (Ret.) David Doyle`,
+  title: `${SITE_NAME} | David S. Doyle`,
   description: SITE_DESCRIPTION,
   metadataBase: new URL("https://summitinitiativesolutions.com"),
   openGraph: {

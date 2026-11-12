@@ -64,8 +64,8 @@ export default function Contact() {
           Pull up a chair.
         </h1>
         <p className="text-white/60 text-lg leading-relaxed mb-12 max-w-xl">
-          Tell me about your practice and the client you&rsquo;re thinking about. The fastest way
-          is a call; prefer email, write below.
+          Tell me about your organization, your team, or the event you&rsquo;re planning. The
+          fastest way is a call; prefer email, write below.
         </p>
 
         <CalendlyButton className="mb-14" />
