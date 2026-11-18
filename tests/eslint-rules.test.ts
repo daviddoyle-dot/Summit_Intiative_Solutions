@@ -75,9 +75,18 @@ test("a name that only starts with NODE_ENV or NEXT_PUBLIC_ is still a server va
   assert.deepEqual(await hits(code, "components/Example.tsx", "no-restricted-syntax"), [ERROR, ERROR]);
 });
 
-test("a client component can't read through process[\"env\"], which Next.js never fills in", async () => {
-  const code = `${CLIENT}export const a = process["env"].ADMIN_PASSWORD;\nexport const b = process["env"].NEXT_PUBLIC_SITE_URL;\n`;
-  assert.deepEqual(await hits(code, "components/Example.tsx", "no-restricted-syntax"), [ERROR, ERROR]);
+test("process[\"env\"] in a client component follows the same rules as process.env", async () => {
+  const blocked = [
+    CLIENT,
+    'export const a = process["env"].ADMIN_PASSWORD;',
+    'export const b = process["env"]["ADMIN_PASSWORD"];',
+    'export const env = process["env"];',
+    "",
+  ].join("\n");
+  assert.deepEqual(await hits(blocked, "components/Example.tsx", "no-restricted-syntax"), [ERROR, ERROR, ERROR]);
+  // Next.js fills these in, as it does process.env.NEXT_PUBLIC_SITE_URL.
+  const allowed = `${CLIENT}export const a = process["env"].NEXT_PUBLIC_SITE_URL;\nexport const b = process["env"].NODE_ENV;\n`;
+  assert.deepEqual(await hits(allowed, "components/Example.tsx", "no-restricted-syntax"), []);
 });
 
 test("structured data can't go into a script through a bare JSON.stringify", async () => {
