@@ -29,8 +29,9 @@ const SERVER_ENV_IN_CLIENT = PROCESS_ENV_FORMS.flatMap((env) => [
   `${IN_CLIENT_FILE} MemberExpression${env}[computed=true]:not([property.value=${BROWSER_SAFE}])`,
 ]).map((selector) => ({ selector, message: SERVER_ENV_MESSAGE }));
 // process.env on its own. Destructured or passed around, it is never filled
-// in, so even NEXT_PUBLIC_ names read that way are undefined; a simple alias
-// sometimes is, depending on the bundler, so it is flagged too. This also
+// in, so even NEXT_PUBLIC_ names read that way are undefined. A simple const
+// alias is filled in today, but a reassigned one only by webpack, so aliases
+// are flagged too. This also
 // flags TypeScript wrappers such as (process.env as Env).NEXT_PUBLIC_X, which
 // do work; write process.env.NEXT_PUBLIC_X instead.
 const WHOLE_ENV_IN_CLIENT = {
