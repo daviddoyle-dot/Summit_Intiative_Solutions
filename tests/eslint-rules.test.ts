@@ -66,8 +66,29 @@ test("a client component may read NODE_ENV, and NEXT_PUBLIC_ names in brackets",
 });
 
 test("a client component can't read a server variable in brackets either", async () => {
-  const code = `${CLIENT}export const a = process.env["ADMIN_PASSWORD"];\nexport const b = process.env.NODE_ENVIRONMENT;\n`;
+  const code = `${CLIENT}export const a = process.env["ADMIN_PASSWORD"];\nexport const b = process.env[name];\n`;
   assert.deepEqual(await hits(code, "components/Example.tsx", "no-restricted-syntax"), [ERROR, ERROR]);
+});
+
+test("a name that only starts with NODE_ENV or NEXT_PUBLIC_ is still a server variable", async () => {
+  const code = `${CLIENT}export const a = process.env.NODE_ENVIRONMENT;\nexport const b = process.env.NEXT_PUBLIC_;\n`;
+  assert.deepEqual(await hits(code, "components/Example.tsx", "no-restricted-syntax"), [ERROR, ERROR]);
+});
+
+test("a client component can't read through process[\"env\"], which Next.js never fills in", async () => {
+  const code = `${CLIENT}export const a = process["env"].ADMIN_PASSWORD;\nexport const b = process["env"].NEXT_PUBLIC_SITE_URL;\n`;
+  assert.deepEqual(await hits(code, "components/Example.tsx", "no-restricted-syntax"), [ERROR, ERROR]);
+});
+
+test("structured data can't go into a script through a bare JSON.stringify", async () => {
+  const bare = "export const S = () => <script dangerouslySetInnerHTML={{ __html: JSON.stringify({ a: 1 }) }} />;\n";
+  for (const file of ["app/example.tsx", "components/Example.tsx"]) {
+    assert.deepEqual(await hits(bare, file, "no-restricted-syntax"), [ERROR], file);
+  }
+  const safe = 'import { jsonLdHtml } from "@/lib/json-ld";\nexport const S = () => <script dangerouslySetInnerHTML={{ __html: jsonLdHtml({ a: 1 }) }} />;\n';
+  assert.deepEqual(await hits(safe, "app/example.tsx", "no-restricted-syntax"), []);
+  // JSON.stringify elsewhere is fine.
+  assert.deepEqual(await hits("export const s = JSON.stringify({ a: 1 });\n", "lib/example.ts", "no-restricted-syntax"), []);
 });
 
 test("'use client' only counts as the file's directive, not as a string elsewhere", async () => {

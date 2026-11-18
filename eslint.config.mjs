@@ -27,6 +27,18 @@ const WHOLE_ENV_IN_CLIENT = {
   message:
     "In a client component, write each variable out as process.env.NEXT_PUBLIC_NAME. Next.js doesn't fill in destructured or aliased process.env.",
 };
+// process["env"] is never filled in either, whatever follows it.
+const BRACKET_ENV_IN_CLIENT = {
+  selector: `${IN_CLIENT_FILE} MemberExpression[object.name='process'][computed=true][property.value='env']`,
+  message: "In a client component, write each variable out as process.env.NEXT_PUBLIC_NAME, not process[\"env\"].",
+};
+// Structured data must go into its <script> through jsonLdHtml (lib/json-ld.ts):
+// a bare JSON.stringify lets "</script>" in a post title end the tag early.
+const BARE_JSON_IN_HTML = {
+  selector:
+    "JSXAttribute[name.name='dangerouslySetInnerHTML'] CallExpression[callee.object.name='JSON'][callee.property.name='stringify']",
+  message: "Use jsonLdHtml from lib/json-ld.ts here: JSON.stringify doesn't escape \"<\", so text can end the script tag.",
+};
 
 const eslintConfig = defineConfig([
   ...nextVitals,
@@ -44,7 +56,13 @@ const eslintConfig = defineConfig([
       // No console.log in site code; console.warn and console.error stay
       // allowed for the server logs Vercel keeps.
       "no-console": ["error", { allow: ["warn", "error"] }],
-      "no-restricted-syntax": ["error", ...SERVER_ENV_IN_CLIENT, WHOLE_ENV_IN_CLIENT],
+      "no-restricted-syntax": [
+        "error",
+        ...SERVER_ENV_IN_CLIENT,
+        WHOLE_ENV_IN_CLIENT,
+        BRACKET_ENV_IN_CLIENT,
+        BARE_JSON_IN_HTML,
+      ],
     },
   },
 ]);
