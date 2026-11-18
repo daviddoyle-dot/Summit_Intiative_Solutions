@@ -46,6 +46,30 @@ test("server code may read server environment variables", async () => {
   }
 });
 
+test("a client component can't destructure or alias process.env", async () => {
+  // Next.js only inlines process.env.NEXT_PUBLIC_X written out in full, so these
+  // forms are undefined in the browser even for NEXT_PUBLIC_ names.
+  const code = [
+    CLIENT,
+    "const { ADMIN_PASSWORD } = process.env;",
+    "const { NEXT_PUBLIC_SITE_URL } = process.env;",
+    "const env = process.env;",
+    "export { ADMIN_PASSWORD, NEXT_PUBLIC_SITE_URL, env };",
+    "",
+  ].join("\n");
+  assert.deepEqual(await hits(code, "components/Example.tsx", "no-restricted-syntax"), [ERROR, ERROR, ERROR]);
+});
+
+test("a client component may read NODE_ENV, and NEXT_PUBLIC_ names in brackets", async () => {
+  const code = `${CLIENT}export const a = process.env.NODE_ENV;\nexport const b = process.env["NEXT_PUBLIC_SITE_URL"];\n`;
+  assert.deepEqual(await hits(code, "components/Example.tsx", "no-restricted-syntax"), []);
+});
+
+test("a client component can't read a server variable in brackets either", async () => {
+  const code = `${CLIENT}export const a = process.env["ADMIN_PASSWORD"];\nexport const b = process.env.NODE_ENVIRONMENT;\n`;
+  assert.deepEqual(await hits(code, "components/Example.tsx", "no-restricted-syntax"), [ERROR, ERROR]);
+});
+
 test("'use client' only counts as the file's directive, not as a string elsewhere", async () => {
   const code = 'const label = "use client";\nexport const a = process.env.ADMIN_PASSWORD + label;\n';
   assert.deepEqual(await hits(code, "lib/example.ts", "no-restricted-syntax"), []);
