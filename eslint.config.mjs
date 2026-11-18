@@ -11,11 +11,14 @@ import nextTs from "eslint-config-next/typescript";
 // Flat config replaces no-restricted-syntax options wholesale: a later block
 // that sets no-restricted-syntax for these files must repeat these entries.
 const IN_CLIENT_FILE = "Program:has(> ExpressionStatement[directive='use client'])";
-// process.env and process["env"], as the object of a further member access.
-const PROCESS_ENV_FORMS = [
-  "[object.object.name='process'][object.computed=false][object.property.name='env']",
-  "[object.object.name='process'][object.computed=true][object.property.value='env']",
-];
+// The two ways of writing process.env: .env and ["env"]. Not covered (nothing
+// here uses them): process[key] with a variable key, process[`env`], and
+// globalThis.process.env.
+const ENV_KEY_FORMS = ["[computed=false][property.name='env']", "[computed=true][property.value='env']"];
+// process.env, as the object of a further member access (process.env.NAME).
+const PROCESS_ENV_FORMS = ENV_KEY_FORMS.map(
+  (form) => `[object.object.name='process']${form.replaceAll("[", "[object.")}`,
+);
 const BROWSER_SAFE = "/^(NEXT_PUBLIC_\\w+|NODE_ENV)$/";
 const SERVER_ENV_MESSAGE =
   "Client components can't read server environment variables. Read it in server-only code (lib/github.ts, lib/admin-auth.ts, app/api/) and pass down only what the page needs.";
@@ -25,12 +28,15 @@ const SERVER_ENV_IN_CLIENT = PROCESS_ENV_FORMS.flatMap((env) => [
   // process.env["NAME"] or process.env[name]
   `${IN_CLIENT_FILE} MemberExpression${env}[computed=true]:not([property.value=${BROWSER_SAFE}])`,
 ]).map((selector) => ({ selector, message: SERVER_ENV_MESSAGE }));
-// process.env on its own (destructured, aliased or passed around) is never
-// inlined, so even NEXT_PUBLIC_ names read that way are undefined.
+// process.env on its own. Destructured or passed around, it is never filled
+// in, so even NEXT_PUBLIC_ names read that way are undefined; a simple alias
+// sometimes is, depending on the bundler, so it is flagged too. This also
+// flags TypeScript wrappers such as (process.env as Env).NEXT_PUBLIC_X, which
+// do work; write process.env.NEXT_PUBLIC_X instead.
 const WHOLE_ENV_IN_CLIENT = {
-  selector: `${IN_CLIENT_FILE} MemberExpression[object.name='process']:matches([computed=false][property.name='env'], [computed=true][property.value='env']):not(MemberExpression > MemberExpression.object)`,
+  selector: `${IN_CLIENT_FILE} MemberExpression[object.name='process']:matches(${ENV_KEY_FORMS.join(", ")}):not(MemberExpression > MemberExpression.object)`,
   message:
-    "In a client component, write each variable out as process.env.NEXT_PUBLIC_NAME. Next.js doesn't fill in destructured or aliased process.env.",
+    "In a client component, write each variable out as process.env.NEXT_PUBLIC_NAME. Next.js doesn't fill in destructured process.env, and an alias isn't reliably filled in.",
 };
 // Structured data must go into its <script> through jsonLdHtml (lib/json-ld.ts):
 // a bare JSON.stringify lets "</script>" in a post title end the tag early.

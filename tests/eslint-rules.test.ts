@@ -80,12 +80,19 @@ test("process[\"env\"] in a client component follows the same rules as process.e
     CLIENT,
     'export const a = process["env"].ADMIN_PASSWORD;',
     'export const b = process["env"]["ADMIN_PASSWORD"];',
+    'export const c = process["env"][name];',
     'export const env = process["env"];',
     "",
   ].join("\n");
-  assert.deepEqual(await hits(blocked, "components/Example.tsx", "no-restricted-syntax"), [ERROR, ERROR, ERROR]);
+  assert.deepEqual(await hits(blocked, "components/Example.tsx", "no-restricted-syntax"), [ERROR, ERROR, ERROR, ERROR]);
   // Next.js fills these in, as it does process.env.NEXT_PUBLIC_SITE_URL.
-  const allowed = `${CLIENT}export const a = process["env"].NEXT_PUBLIC_SITE_URL;\nexport const b = process["env"].NODE_ENV;\n`;
+  const allowed = [
+    CLIENT,
+    'export const a = process["env"].NEXT_PUBLIC_SITE_URL;',
+    'export const b = process["env"].NODE_ENV;',
+    'export const c = process["env"]["NEXT_PUBLIC_SITE_URL"];',
+    "",
+  ].join("\n");
   assert.deepEqual(await hits(allowed, "components/Example.tsx", "no-restricted-syntax"), []);
 });
 
