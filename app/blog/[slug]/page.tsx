@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import PageLogo from "@/components/PageLogo";
 import PostBody from "@/components/PostBody";
 import { getFullPosts, getPostBySlug } from "@/lib/posts";
+import { jsonLdHtml } from "@/lib/json-ld";
 import { formatPostDate } from "@/lib/post-format";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
@@ -70,7 +71,7 @@ export default async function BlogPost({
       <PageLogo />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(jsonLd) }}
       />
       <div className="max-w-3xl mx-auto">
         <Link
