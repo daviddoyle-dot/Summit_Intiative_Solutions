@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import PageLogo from "@/components/PageLogo";
+import { jsonLdHtml } from "@/lib/json-ld";
 
 export const metadata: Metadata = {
   title: "About | Summit Initiative Solutions",
@@ -61,7 +62,7 @@ export default function About() {
       <PageLogo />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_JSON_LD) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdHtml(PERSON_JSON_LD) }}
       />
       <div className="max-w-5xl mx-auto">
         <p className="text-[#C9713D] text-xs font-bold uppercase tracking-[0.25em] mb-4">About</p>

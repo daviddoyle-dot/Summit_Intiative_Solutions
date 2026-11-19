@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import { jsonLdHtml } from "@/lib/json-ld";
 import "./globals.css";
 
 const SITE_NAME = "Summit Initiative Solutions";
@@ -53,7 +54,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#0a0e17] text-white">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdHtml(ORGANIZATION_JSON_LD) }}
         />
         <Nav />
         <main className="flex-1">{children}</main>

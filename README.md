@@ -32,6 +32,14 @@ The contact page posts to `app/api/contact/route.ts`, which emails David through
 and `summitinitiativesolutions.com` verified in Resend. Without the key the form shows an
 error and points visitors to David's email address.
 
+## Visitor countries
+
+`proxy.ts` answers "This site is not available in your region" (403) to visitors from
+countries not listed in `lib/geo.ts`. Requests with no country (local development) are let
+through. **Emergency switch:** set `GEO_BLOCK_DISABLED` to `1` in Vercel -> Project ->
+Settings -> Environment Variables, then redeploy, to let every country in. Remove it and
+redeploy to turn the block back on.
+
 ## Blog and the editor
 
 Posts are Markdown files in `content/posts/` (one file per post, the file name is the web
