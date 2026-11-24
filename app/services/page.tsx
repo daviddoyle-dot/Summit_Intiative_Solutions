@@ -37,13 +37,6 @@ const SERVICES: { title: string; paragraphs: string[]; link?: { href: string; la
     ],
   },
   {
-    title: "Leading Through Change and Complexity",
-    paragraphs: [
-      "Growth, transitions, crises, and new technologies can place unexpected demands on an organization.",
-      "I work with leaders to assess those demands, establish priorities, organize their teams, and adapt their approach as circumstances change.",
-    ],
-  },
-  {
     title: "Keynotes and Speaking",
     paragraphs: [
       "I speak at training events, leader development programs, board meetings, and team gatherings. Each talk is tailored to the audience and focused on what the team needs to hear.",
